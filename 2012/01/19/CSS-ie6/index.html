@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="IE6 高度等于外围的高度12height=#bpic的高度：height:expression(document.getElementById(&apos;bpic&apos;).offsetHeight+&quot;px&quot;);height=body的高度：height:expression(document.body.offsetHeight+ &quot;px&quot;);
+IE6 图片最大宽度12max-width:695px;_wid">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IE6 CSS">
+<meta property="og:url" content="https://xmh-web.com/2012/01/19/CSS-ie6/index.html">
+<meta property="og:site_name" content="xmh">
+<meta property="og:description" content="IE6 高度等于外围的高度12height=#bpic的高度：height:expression(document.getElementById(&apos;bpic&apos;).offsetHeight+&quot;px&quot;);height=body的高度：height:expression(document.body.offsetHeight+ &quot;px&quot;);
+IE6 图片最大宽度12max-width:695px;_wid">
+<meta property="og:updated_time" content="2012-02-01T04:00:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="IE6 CSS">
+<meta name="twitter:description" content="IE6 高度等于外围的高度12height=#bpic的高度：height:expression(document.getElementById(&apos;bpic&apos;).offsetHeight+&quot;px&quot;);height=body的高度：height:expression(document.body.offsetHeight+ &quot;px&quot;);
+IE6 图片最大宽度12max-width:695px;_wid">
+
+
+
+
+
+
+  <link rel="canonical" href="https://xmh-web.com/2012/01/19/CSS-ie6/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>IE6 CSS | xmh</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">xmh</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2012/01/19/CSS-ie6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoManHua">
+      <meta itemprop="description" content="I am manhua xiao">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xmh">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">IE6 CSS
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2012-01-19 10:28:40" itemprop="dateCreated datePublished" datetime="2012-01-19T10:28:40+08:00">2012-01-19</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2012-02-01 12:00:00" itemprop="dateModified" datetime="2012-02-01T12:00:00+08:00">2012-02-01</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="IE6-高度等于外围的高度"><a href="#IE6-高度等于外围的高度" class="headerlink" title="IE6 高度等于外围的高度"></a>IE6 高度等于外围的高度</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">height=<span class="comment">#bpic的高度：height:expression(document.getElementById('bpic').offsetHeight+"px");</span></div><div class="line">height=body的高度：height:expression(document.body.offsetHeight+ <span class="string">"px"</span>);</div></pre></td></tr></table></figure>
+<h2 id="IE6-图片最大宽度"><a href="#IE6-图片最大宽度" class="headerlink" title="IE6 图片最大宽度"></a>IE6 图片最大宽度</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">max-width:695px;</div><div class="line">_width: expression(this.width &gt; 695 ? 695 : <span class="literal">true</span>);</div></pre></td></tr></table></figure>
+<h2 id="IE6-图片最小高度166px"><a href="#IE6-图片最小高度166px" class="headerlink" title="IE6 图片最小高度166px"></a>IE6 图片最小高度166px</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">min-height:166px;</div><div class="line">_height:expression((document.documentElement.clientHeight||document.body.clientHeight)&gt;166?<span class="string">"166px"</span>:<span class="string">""</span>);</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="IE6-高度-外围ID的高度-id-”case”"><a href="#IE6-高度-外围ID的高度-id-”case”" class="headerlink" title="IE6 高度=外围ID的高度(id=”case”)"></a>IE6 高度=外围ID的高度(id=”case”)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">height:100%;</div><div class="line">_height:expression(document.getElementById(<span class="string">'case'</span>).offsetHeight+<span class="string">'px'</span>);</div></pre></td></tr></table></figure>
+<h2 id="IE6-背景透明-png24"><a href="#IE6-背景透明-png24" class="headerlink" title="IE6 背景透明 png24"></a>IE6 背景透明 png24</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.qq &#123;</div><div class="line">	background:url(../images/pic/top.png) no-repeat;</div><div class="line">	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<span class="string">'http://img0.bdstatic.com/static/widget/common/top/images/to-top_6744d50c0e.png'</span>);//ie6</div><div class="line">	_background:0 //ie6</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="IE6-最小宽度"><a href="#IE6-最小宽度" class="headerlink" title="IE6 最小宽度"></a>IE6 最小宽度</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.wrapper &#123;</div><div class="line">	min-width:500px;</div><div class="line">	_width:expression((document.documentElement.clientWidth||document.body.clientWidth) &lt; 500 ? <span class="string">"500px"</span>: <span class="string">"auto"</span>); //ie6</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="IE6-position-fixed"><a href="#IE6-position-fixed" class="headerlink" title="IE6 position:fixed"></a>IE6 position:fixed</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">.gotop &#123;</div><div class="line">	position:fixed;</div><div class="line">	z-index:100;</div><div class="line">	top:10px;</div><div class="line">	right: 0px;</div><div class="line">	_position:absolute;//ie6</div><div class="line">	_top:auto;//ie6</div><div class="line">	_top:expression(<span class="built_in">eval</span>(document.documentElement.scrollTop)+10);//ie6</div><div class="line">&#125;</div><div class="line"></div><div class="line">*html &#123;</div><div class="line">	background-image:url(about:blank);//ie6</div><div class="line">	background-attachment:fixed;//ie6</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="IE6-fixed-bottom的高度"><a href="#IE6-fixed-bottom的高度" class="headerlink" title="IE6 fixed bottom的高度"></a>IE6 fixed bottom的高度</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">.qq &#123;</div><div class="line">	position:fixed;</div><div class="line">	right:5px;</div><div class="line">	bottom:100px;</div><div class="line">	_position:absolute;//ie6</div><div class="line">	_bottom:auto;_top:expression(<span class="built_in">eval</span>(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||100))); //ie6</div><div class="line">&#125;</div><div class="line"></div><div class="line">*html &#123;</div><div class="line">	_background-image:url(about:blank);</div><div class="line">	_background-attachment:scroll</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS2/" rel="tag"># CSS2</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/18/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif"  alt="xiaoManHua" />
+
+              <p class="site-author-name" itemprop="name">xiaoManHua</p>
+              <p class="site-description motion-element" itemprop="description">I am manhua xiao</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IE6-高度等于外围的高度"><span class="nav-number">1.</span> <span class="nav-text">IE6 高度等于外围的高度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE6-图片最大宽度"><span class="nav-number">2.</span> <span class="nav-text">IE6 图片最大宽度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE6-图片最小高度166px"><span class="nav-number">3.</span> <span class="nav-text">IE6 图片最小高度166px</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE6-高度-外围ID的高度-id-”case”"><span class="nav-number">4.</span> <span class="nav-text">IE6 高度=外围ID的高度(id=”case”)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE6-背景透明-png24"><span class="nav-number">5.</span> <span class="nav-text">IE6 背景透明 png24</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE6-最小宽度"><span class="nav-number">6.</span> <span class="nav-text">IE6 最小宽度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE6-position-fixed"><span class="nav-number">7.</span> <span class="nav-text">IE6 position:fixed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE6-fixed-bottom的高度"><span class="nav-number">8.</span> <span class="nav-text">IE6 fixed bottom的高度</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-xiaoManHua"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xiaoManHua</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.2.2</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.4.1</div>
+
+
+
+
+<div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
