@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F09%2F18%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[IE6 CSS]]></title>
+    <url>%2F2012%2F01%2F19%2FCSS-ie6%2F</url>
+    <content type="text"><![CDATA[IE6 高度等于外围的高度12height=#bpic的高度：height:expression(document.getElementById('bpic').offsetHeight+"px");height=body的高度：height:expression(document.body.offsetHeight+ "px"); IE6 图片最大宽度12max-width:695px;_width: expression(this.width &gt; 695 ? 695 : true); IE6 图片最小高度166px12min-height:166px;_height:expression((document.documentElement.clientHeight||document.body.clientHeight)&gt;166?"166px":""); IE6 高度=外围ID的高度(id=”case”)12height:100%;_height:expression(document.getElementById('case').offsetHeight+'px'); IE6 背景透明 png2412345.qq &#123; background:url(../images/pic/top.png) no-repeat; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://img0.bdstatic.com/static/widget/common/top/images/to-top_6744d50c0e.png');//ie6 _background:0 //ie6&#125; IE6 最小宽度1234.wrapper &#123; min-width:500px; _width:expression((document.documentElement.clientWidth||document.body.clientWidth) &lt; 500 ? "500px": "auto"); //ie6&#125; IE6 position:fixed1234567891011121314.gotop &#123; position:fixed; z-index:100; top:10px; right: 0px; _position:absolute;//ie6 _top:auto;//ie6 _top:expression(eval(document.documentElement.scrollTop)+10);//ie6&#125;*html &#123; background-image:url(about:blank);//ie6 background-attachment:fixed;//ie6&#125; IE6 fixed bottom的高度123456789101112.qq &#123; position:fixed; right:5px; bottom:100px; _position:absolute;//ie6 _bottom:auto;_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||100))); //ie6&#125;*html &#123; _background-image:url(about:blank); _background-attachment:scroll&#125;]]></content>
+      <tags>
+        <tag>CSS2</tag>
+      </tags>
+  </entry>
+</search>
