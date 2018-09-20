@@ -1138,7 +1138,7 @@ pre .javascript .function {
   display: inline-block;
   vertical-align: top;
   line-height: 36px;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: normal;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
@@ -1837,7 +1837,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #2ba7ff;
+  background: #ffffb5;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2642,8 +2642,12 @@ hr {
   display: none;
 }
 .site-meta .site-title {
+  padding-left: 40px;
+  background: url("/images/logo.png") no-repeat left center;
+  background-size: auto 100%;
+  color: #bcb60f;
   font-size: 28px;
-  font-weight: bolder;
+  font-weight: bold;
 }
 @media (max-width: 767px) {
   .site-meta .site-title {
