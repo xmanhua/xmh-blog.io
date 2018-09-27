@@ -9,6 +9,62 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[HTML5整理]]></title>
+    <url>%2F2017%2F05%2F23%2FHTML5%2F</url>
+    <content type="text"><![CDATA[微信 H5 的开发过程中遇到的一些坑1. 页面滚动不顺畅,在ios版的微信里会出现问题，解决办法给要滚动区域的元素加上这个属性：1-webkit-overflow-scrolling: touch; 2. ios版会把页面中的一串数字识别成电话然后触摸会调用系统不打电话，解决办法加上meta1&lt; meta content="telephone=no,email=no" name="format-detection" /&gt; 3. 在一些文字过多的地方Android版微信会把文字变大而ios则不会，这样会导致排版错乱页面变得很丑…12解决的办法是给包裹文字的元素加上:display: inline-block; 4. 点击元素产生背景加上这个:1-webkit-tap-highlight-color: rgba(0,0,0,0); 5. click的300ms延迟1要么禁止页面的缩放，要么如果使用了zepto，则用tap代替click，要么使用fastclick。]]></content>
+      <tags>
+        <tag>HTML5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[常用CSS3整理]]></title>
+    <url>%2F2016%2F05%2F21%2FCSS3-finishing%2F</url>
+    <content type="text"><![CDATA[显示几行,超出显示。。。（x,n要改为实际数字，ie,ff不支持省略号）12345678display: block;display: -webkit-box;overflow: hidden;-webkit-line-clamp: 2;-webkit-box-orient: vertical;text-overflow: ellipsis;line-height: X;max-height: X*N; 图片遮罩1. 方形的图变成圆形显示123img &#123; clip-path: circle(100px at center);&#125; 2. 文字和背景图在某个形状内显示1234567.bg-mask｛ width: 200px; height: 200px; background: url(img/orig.jpg);//背景图片 color: red; -webkit-mask-box-image: url(img/mask.png);//米老鼠图形内填充，图形外是全透明；｝ body里所有的 a 不能点击的链接123body &#123; pointer-events: none;// ie9,ie10不支持.&#125; iPhone 设备 横屏字不要放大123456@media screen and (max-device-width: 1023px)&#123; body&#123; -webkit-text-size-adjust:none; -ms-text-size-adjust:none &#125;&#125; iPhone 设备 滚动条滚得更灵活123html, body &#123; -webkit-overflow-scrolling: touch;&#125; 宽高包含border\padding值123-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box; 打勾动画 1234567891011121314151617181920.successIcon&#123; display: inline-block; width:60px; height: 60px; background: url("/img/confirmation-tick.png") no-repeat left center; background-size: auto 100%; animation: fill 0.56s steps(13, start) forwards; -webkit-animation: fill 0.56s steps(13, start) forwards; -ms-animation: fill 0.56s steps(13, start) forwards&#125;//780 = (60/170)*2210, 170是每针图的宽，170*13(13针)= 2210;@keyframes fill &#123;to &#123; background-position: -780px &#125;&#125;@-webkit-keyframes fill &#123;to &#123; background-position: -780px &#125;&#125;@-ms-keyframes fill &#123;to &#123; background-position: -780px &#125;&#125;]]></content>
+      <tags>
+        <tag>CSS3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CSS3选择器nth-child(n)实现隔几行选择元素]]></title>
+    <url>%2F2015%2F11%2F27%2FCSS3-nth-child-n%2F</url>
+    <content type="text"><![CDATA[nth-child(n)，n 可以是数字、关键词或公式。选择器匹配属于其父元素的第N个子元素，不论元素的类型。 一行显示4个，第4个的倍数+1另起一行:123li:nth-child(5n+1)&#123; clear: both ;&#125; 序号写法把第3个LI的背景设为橙色:123li:nth-child(3)&#123; background:orange;&#125; 倍数写法把第3、第6、第9…、所有3的倍数的LI的背景设为橙色:123li:nth-child(3n)&#123; background:orange;&#125; 倍数分组匹配：(1). 匹配第1、第4、第7、…、每3个为一组的第1个LI123li:nth-child(3n+1)&#123; background:orange;&#125; (2). 匹配第5、第8、第11、…、从第5个开始每3个为一组的第1个LI123li:nth-child(3n+5)&#123; background:orange;&#125; (3). 匹配第5-1=4、第10-1=9、…、第5的倍数减1个LI123li:nth-child(5n-1)&#123; background:orange;&#125;]]></content>
+      <tags>
+        <tag>CSS3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JS设置获取cookie]]></title>
+    <url>%2F2015%2F11%2F03%2Fjs-get-cookie%2F</url>
+    <content type="text"><![CDATA[js获取url指定参数值1234567891011121314function getCookie(cname) &#123; var name = cname + "="; var ca = document.cookie.split(';'); for(var i = 0; i &lt; ca.length; i++) &#123; var c = ca[i]; while (c.charAt(0) == ' ') &#123; c = c.substring(1); &#125; if (c.indexOf(name) == 0) &#123; return c.substring(name.length, c.length); &#125; &#125; return "";&#125; 123456789//使用 $("a").click(function () &#123; var external_url = $(this).attr('href'); external_url = $.trim(external_url); var cookieSelect = "external-url=" + external_url; document.cookie = cookieSelect;//设置cookie &#125;);var external_url = getCookie("external-url");//获取cookie]]></content>
+      <tags>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[js判断设备]]></title>
+    <url>%2F2015%2F05%2F03%2Fjs-get-operating-system%2F</url>
+    <content type="text"><![CDATA[判断设备类型123456789101112131415161718192021222324252627282930313233343536373839404142function getMobileOperatingSystem() &#123; var userAgent = navigator.userAgent || navigator.vendor || window.opera; var ver = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/); if(userAgent.match(/SAMSUNG|SGH-[I|N|T]|GT-[I|P|N]|SM-[N|P|T|Z|G]|SHV-E|SCH-[I|J|R|S]|SPH-L/i)) &#123; return 'samsung'; &#125; else if (userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) &#123; ver = parseInt(ver[1], 10); if(ver &lt; 10)&#123; return 'ios ios9-below'; &#125; else &#123; return 'ios'; &#125; &#125; else if (userAgent.match(/iPad/i)) &#123; ver = parseInt(ver[1], 10); if(ver &lt; 10)&#123; return 'ios ipad ios9-below'; &#125;else &#123; return 'ios ipad'; &#125; &#125; else if (userAgent.match(/Android/i)) &#123; return 'android'; &#125; else if (userAgent.match(/FIREFOX/i)) &#123; return 'firefox no-touch'; &#125;else if (/MSIE 9/i.test(userAgent)) &#123; return 'ie9 no-touch'; &#125;else &#123; return 'unknown no-touch'; &#125;&#125;navigator.sayswho= (function()&#123; var ua= navigator.userAgent, tem, M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []; M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?']; if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]); var str = M.join(' ') ; str = str.split(' '); if( str[0] == 'Safari' &amp;&amp; str[1] &lt; 10) &#123; return 'safari9-below'; &#125;&#125;); 12345678$(function()&#123; $('body').addClass(getMobileOperatingSystem()).addClass(navigator.sayswho()); //如果body有ios,同时屏幕宽度小于768px,就是苹果手机; if($('body').hasClass('ios') &amp;&amp; $(window).width() &lt; 768) &#123; ... &#125;&#125;);]]></content>
+      <tags>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JS获取当前页面页面URL信息]]></title>
+    <url>%2F2014%2F11%2F03%2Fjs-get-url%2F</url>
+    <content type="text"><![CDATA[js获取url指定参数值12345678910111213function GetQueryString(name) &#123; var reg = new RegExp("(^|&amp;)" + name + "=([^&amp;]*)(&amp;|$)"); var r = window.location.search.substr(1).match(reg); if (r != null) &#123; return unescape(r[2]) &#125; return null;&#125;假设url地址是http://www.xxx.com?ProID=100&amp;UserID=200，可用GetQueryString("ProID")或GetQueryString("UserID")获取相应参数值。 12345678910111213function getQueryString(name, str) &#123; var reg = new RegExp("(^|&amp;)" + name + "=([^&amp;]*)(&amp;|$)"); var r = str ? str.match(reg) : window.location.search.substr(1).match(reg); if (r != null) &#123; var res = unescape(r[2]); return res; &#125; return null; &#125; 假设url地址是http://www.xxx.com?ProID=100?200，要取200: r = href.split('?'), getQueryString('ProID', r[1]); 设置或获取对象指定的文件名或路径1234url = http://www.baidu.com/baidu/postedit/46887983?wd=hei+jude&amp;tn=monline_4_dgwindow.location.pathname;---&gt; "/baidu/postedit/46887983" 设置或获取整个 URL 为字符串1234url = http://www.baidu.com/baidu?wd=hei+jude&amp;tn=monline_4_dgwindow.location.href;---&gt; "http://www.baidu.com/baidu?wd=hei+jude&amp;tn=monline_4_dg" 设置或获取与 URL 关联的端口号码123url =http://192.168.14.97:2000/analytics/profiles/window.location.port;---&gt; "2000" 设置或获取 URL 的协议部分123url = http://www.baidu.com/baidu?wd=hei+jude&amp;tn=monline_4_dgwindow.location.protocol;---&gt; "http:" 设置或获取 href 属性中在井号“#”后面的分段123url = http://192.168.2.11/forum.php?mod=viewthread&amp;tid=65&amp;page=1&amp;extra=#pid207window.location.hash;---&gt; "#pid207" 设置或获取 location 或 URL 的 hostname 和 port 号码123url = http://192.168.14.97:2000/analytics/profiles/window.location.host;---&gt; "192.168.14.97:2000" 设置或获取 location 或 URL 的 hostname123url = http://192.168.14.97:2000/analytics/profiles/window.location.hostname;---&gt; "192.168.14.97" 设置或获取 href 属性中跟在问号后面的部分123456url = http://www.baidu.com/baidu?wd=hei+jude&amp;tn=monline_4_dgwindow.location.search;---&gt; "?wd=hei+jude&amp;tn=monline_4_dg"pathname.split('tn=')[1];---&gt; "monline_4_dg" 获取变量的值(截取等号后面的部分)12var url = window.location.search;var loc = url.substring(url.lastIndexOf('=')+1, url.length); iframe插入页面1window.location.replace("main.html");]]></content>
+      <tags>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[常用的CSS2整理]]></title>
+    <url>%2F2013%2F03%2F19%2FCSS2-finishing%2F</url>
+    <content type="text"><![CDATA[一、上下左右居中1234567891011.box &#123; display: table; table-layout: fixed; //ie width: 100%; height: 100%; text-align:center;&#125;.box div &#123; display: table-cell; vertical-align: middle;&#125; 二、换行1. 强制不换行123div&#123;white-space:nowrap;&#125; 2. 自动换行1234div&#123;word-wrap: break-word;word-break: normal;&#125; 3. 强制英文单词断行123div&#123;word-break:break-all;&#125; 三、CSS文字效果123456789101112131415161718192021221. 文字一行显示，超出宽度用省略号代替:overflow:hidden;display:inline-block;white-space:nowrap;text-overflow:ellipsis;width:130px;2. 小写的字变成大写,大写的字放大: font-variant: small-caps;3. 字斜的: font-style: italic;4. 首字母大写: text-transform:capitalize;5. 全大写: text-transform : uppercase;6. 全小写: text-transform:lowercase;7. 字上划线: text-decoration:overline;8. 字中划线: text-decoration:line-through;9. 字下划线: text-decoration:underline; 四、.cur图片替换鼠标默认指针123456789101112131415161718.box &#123; position:relative;&#125;.box a &#123; position:absolute; left:0px; height:50%; width:100%; background: url(_blank);&#125;.box a.previous &#123; top:0; cursor:url(images/pic/mouseup_is.cur),auto;&#125;.box a.next &#123; bottom:0; cursor:url(images/pic/mousedown_is.cur),auto;&#125; 五、div加滚动条显示内容1234567891011121314151617div&#123; overflow-y: auto; overflow: auto; width: 400px; height: 200px;&#125;滚动条加颜色：div &#123; scrollbar-arrow-color: #fff; scrollbar-face-color: #2073c1; scrollbar-darkshadow-color: #2073c1; scrollbar-highlight-color: #CDCDCD; scrollbar-shadow-color: #CDCDCD; scrollbar-track-color: #CDCDCD; scrollbar-3dlight-color: #2073c1;&#125; 六、高度等于外围的高度1. height=#div-id的高度：1height:expression(document.getElementById('div-id').offsetHeight+"px"); 2. height=body的高度：1height:expression(document.body.offsetHeight+ "px"); 七、鼠标经过有链接的图片改变透明度12345a:hover img&#123; -moz-opacity: 0.85; opacity: 0.85;filter: Alpha(Opacity=85);&#125;]]></content>
+      <tags>
+        <tag>CSS2</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[IE6 CSS]]></title>
     <url>%2F2012%2F01%2F19%2FCSS-ie6%2F</url>
     <content type="text"><![CDATA[IE6 高度等于外围的高度12height=#bpic的高度：height:expression(document.getElementById('bpic').offsetHeight+"px");height=body的高度：height:expression(document.body.offsetHeight+ "px"); IE6 图片最大宽度12max-width:695px;_width: expression(this.width &gt; 695 ? 695 : true); IE6 图片最小高度166px12min-height:166px;_height:expression((document.documentElement.clientHeight||document.body.clientHeight)&gt;166?"166px":""); IE6 高度=外围ID的高度(id=”case”)12height:100%;_height:expression(document.getElementById('case').offsetHeight+'px'); IE6 背景透明 png2412345.qq &#123; background:url(../images/pic/top.png) no-repeat; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://img0.bdstatic.com/static/widget/common/top/images/to-top_6744d50c0e.png');//ie6 _background:0 //ie6&#125; IE6 最小宽度1234.wrapper &#123; min-width:500px; _width:expression((document.documentElement.clientWidth||document.body.clientWidth) &lt; 500 ? "500px": "auto"); //ie6&#125; IE6 position:fixed1234567891011121314.gotop &#123; position:fixed; z-index:100; top:10px; right: 0px; _position:absolute;//ie6 _top:auto;//ie6 _top:expression(eval(document.documentElement.scrollTop)+10);//ie6&#125;*html &#123; background-image:url(about:blank);//ie6 background-attachment:fixed;//ie6&#125; IE6 fixed bottom的高度123456789101112.qq &#123; position:fixed; right:5px; bottom:100px; _position:absolute;//ie6 _bottom:auto;_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||100))); //ie6&#125;*html &#123; _background-image:url(about:blank); _background-attachment:scroll&#125;]]></content>
