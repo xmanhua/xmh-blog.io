@@ -1837,7 +1837,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #befb94;
+  background: #a4ffc3;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2589,6 +2589,7 @@ hr {
 }
 .header {
   background: #f5f5f5;
+  border-bottom: #23a1c9 3px solid;
 }
 .header-inner {
   padding: 25px 0 20px;
@@ -2613,9 +2614,12 @@ hr {
   color: #222;
 }
 @media (max-width: 767px) {
+  .header {
+    border-bottom: #23a1c9 2px solid;
+  }
   .header-inner {
     width: auto;
-    margin-bottom: 50px;
+    margin-bottom: 0;
     padding: 10px;
   }
 }
