@@ -1138,7 +1138,7 @@ pre .javascript .function {
   display: inline-block;
   vertical-align: top;
   line-height: 36px;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: normal;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
@@ -1837,7 +1837,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #2ba7ff;
+  background: #2b383d;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1908,10 +1908,9 @@ pre .javascript .function {
 }
 .post-toc ol {
   margin: 0;
-  padding: 0 2px 5px 10px;
+  padding: 0;
   text-align: left;
   list-style: none;
-  font-size: 14px;
 }
 .post-toc ol > ol {
   padding-left: 0;
@@ -1927,11 +1926,28 @@ pre .javascript .function {
 .post-toc ol a:hover {
   color: #333;
 }
+.post-toc li {
+  padding: 0 2px 0 10px;
+  font-size: 14px;
+}
 .post-toc .nav-item {
   overflow: hidden;
   text-overflow: ellipsis;
+  text-align: left;
   white-space: nowrap;
   line-height: 1.8;
+  list-style: none;
+}
+.post-toc .nav-item a {
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+  transition-property: all;
+  color: #999;
+  border-bottom: none;
+}
+.post-toc .nav-item a:hover {
+  color: #333;
 }
 .post-toc .nav .nav-child {
   display: none;
@@ -1946,14 +1962,14 @@ pre .javascript .function {
   display: block;
 }
 .post-toc .nav .active > a {
-  color: #87daff;
-  border-bottom-color: #87daff;
+  color: #23a1c9;
+  border-bottom-color: #23a1c9;
 }
 .post-toc .nav .active-current > a {
   color: #333;
 }
 .post-toc .nav .active-current > a:hover {
-  color: #87daff;
+  color: #23a1c9;
 }
 .footer {
   font-size: 14px;
@@ -2450,7 +2466,7 @@ pre .javascript .function {
   }
 }
 .page-post-detail .sidebar-toggle-line {
-  background: #87daff;
+  background: #23a1c9;
 }
 .page-post-detail .comments {
   overflow: hidden;
@@ -2589,6 +2605,7 @@ hr {
 }
 .header {
   background: #f5f5f5;
+  border-bottom: #23a1c9 3px solid;
 }
 .header-inner {
   padding: 25px 0 20px;
@@ -2613,9 +2630,12 @@ hr {
   color: #222;
 }
 @media (max-width: 767px) {
+  .header {
+    border-bottom: #23a1c9 2px solid;
+  }
   .header-inner {
     width: auto;
-    margin-bottom: 50px;
+    margin-bottom: 0;
     padding: 10px;
   }
 }
@@ -2642,8 +2662,12 @@ hr {
   display: none;
 }
 .site-meta .site-title {
+  padding-left: 40px;
+  background: url("/images/logo.png") no-repeat left center;
+  background-size: auto 100%;
+  color: #bcb60f;
   font-size: 28px;
-  font-weight: bolder;
+  font-weight: bold;
 }
 @media (max-width: 767px) {
   .site-meta .site-title {
