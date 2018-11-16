@@ -59,6 +59,7 @@
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
 <link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+<link href="/css/grid.css?v=6.4.1" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
@@ -108,18 +109,18 @@
 
 
 
-  <meta name="description" content="nth-child(n)，n 可以是数字、关键词或公式。选择器匹配属于其父元素的第N个子元素，不论元素的类型。 一行显示4个，第4个的倍数+1另起一行:123li:nth-child(4n+1)&amp;#123; clear: both ;&amp;#125; 序号写法把第3个LI的背景设为橙色:123li:nth-child(3)&amp;#123;	background:orange;&amp;#125;">
+  <meta name="description" content="nth-child(n)，n 可以是数字、关键词或公式。选择器匹配属于其父元素的第N个子元素，不论元素的类型。 一行显示4个，第4个的倍数+1另起一行:123li:nth-child(4n+1)&amp;#123;  clear: both ;&amp;#125; 序号写法把第3个LI的背景设为橙色:123li:nth-child(3)&amp;#123;  background:orange;&amp;#125;">
 <meta name="keywords" content="CSS3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS3选择器nth-child(n)实现隔几行选择元素">
 <meta property="og:url" content="https://xmh-web.com/2015/11/27/CSS3-nth-child-n/index.html">
 <meta property="og:site_name" content="xmh">
-<meta property="og:description" content="nth-child(n)，n 可以是数字、关键词或公式。选择器匹配属于其父元素的第N个子元素，不论元素的类型。 一行显示4个，第4个的倍数+1另起一行:123li:nth-child(4n+1)&amp;#123; clear: both ;&amp;#125; 序号写法把第3个LI的背景设为橙色:123li:nth-child(3)&amp;#123;	background:orange;&amp;#125;">
+<meta property="og:description" content="nth-child(n)，n 可以是数字、关键词或公式。选择器匹配属于其父元素的第N个子元素，不论元素的类型。 一行显示4个，第4个的倍数+1另起一行:123li:nth-child(4n+1)&amp;#123;  clear: both ;&amp;#125; 序号写法把第3个LI的背景设为橙色:123li:nth-child(3)&amp;#123;  background:orange;&amp;#125;">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2015-11-27T07:00:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS3选择器nth-child(n)实现隔几行选择元素">
-<meta name="twitter:description" content="nth-child(n)，n 可以是数字、关键词或公式。选择器匹配属于其父元素的第N个子元素，不论元素的类型。 一行显示4个，第4个的倍数+1另起一行:123li:nth-child(4n+1)&amp;#123; clear: both ;&amp;#125; 序号写法把第3个LI的背景设为橙色:123li:nth-child(3)&amp;#123;	background:orange;&amp;#125;">
+<meta name="twitter:description" content="nth-child(n)，n 可以是数字、关键词或公式。选择器匹配属于其父元素的第N个子元素，不论元素的类型。 一行显示4个，第4个的倍数+1另起一行:123li:nth-child(4n+1)&amp;#123;  clear: both ;&amp;#125; 序号写法把第3个LI的背景设为橙色:123li:nth-child(3)&amp;#123;  background:orange;&amp;#125;">
 
 
 
@@ -401,13 +402,13 @@
 
       
         <p></p><p>nth-child(n)，n 可以是数字、关键词或公式。选择器匹配属于其父元素的第N个子元素，不论元素的类型。</p><p></p>
-<h2 id="一行显示4个，第4个的倍数-1另起一行"><a href="#一行显示4个，第4个的倍数-1另起一行" class="headerlink" title="一行显示4个，第4个的倍数+1另起一行:"></a>一行显示4个，第4个的倍数+1另起一行:</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">li:nth-child(4n+1)&#123;</span><br><span class="line"> clear: both ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="序号写法"><a href="#序号写法" class="headerlink" title="序号写法"></a>序号写法</h2><h5 id="把第3个LI的背景设为橙色"><a href="#把第3个LI的背景设为橙色" class="headerlink" title="把第3个LI的背景设为橙色:"></a>把第3个LI的背景设为橙色:</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">li:nth-child(3)&#123;</span><br><span class="line">	background:orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="一行显示4个，第4个的倍数-1另起一行"><a href="#一行显示4个，第4个的倍数-1另起一行" class="headerlink" title="一行显示4个，第4个的倍数+1另起一行:"></a>一行显示4个，第4个的倍数+1另起一行:</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">li:nth-child(4n+1)&#123;</span><br><span class="line">  clear: both ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="序号写法"><a href="#序号写法" class="headerlink" title="序号写法"></a>序号写法</h2><h5 id="把第3个LI的背景设为橙色"><a href="#把第3个LI的背景设为橙色" class="headerlink" title="把第3个LI的背景设为橙色:"></a>把第3个LI的背景设为橙色:</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">li:nth-child(3)&#123;</span><br><span class="line">  background:orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="倍数写法"><a href="#倍数写法" class="headerlink" title="倍数写法"></a>倍数写法</h2><h5 id="把第3、第6、第9…、所有3的倍数的LI的背景设为橙色"><a href="#把第3、第6、第9…、所有3的倍数的LI的背景设为橙色" class="headerlink" title="把第3、第6、第9…、所有3的倍数的LI的背景设为橙色:"></a>把第3、第6、第9…、所有3的倍数的LI的背景设为橙色:</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">li:nth-child(3n)&#123;</span><br><span class="line">	background:orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="倍数分组匹配："><a href="#倍数分组匹配：" class="headerlink" title="倍数分组匹配："></a>倍数分组匹配：</h2><h5 id="1-匹配第1、第4、第7、…、每3个为一组的第1个LI"><a href="#1-匹配第1、第4、第7、…、每3个为一组的第1个LI" class="headerlink" title="(1). 匹配第1、第4、第7、…、每3个为一组的第1个LI"></a>(1). 匹配第1、第4、第7、…、每3个为一组的第1个LI</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">li:nth-child(3n+1)&#123;</span><br><span class="line">	background:orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="2-匹配第5、第8、第11、…、从第5个开始每3个为一组的第1个LI"><a href="#2-匹配第5、第8、第11、…、从第5个开始每3个为一组的第1个LI" class="headerlink" title="(2). 匹配第5、第8、第11、…、从第5个开始每3个为一组的第1个LI"></a>(2). 匹配第5、第8、第11、…、从第5个开始每3个为一组的第1个LI</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">li:nth-child(3n+5)&#123;</span><br><span class="line">	background:orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="3-匹配第5-1-4、第10-1-9、…、第5的倍数减1个LI"><a href="#3-匹配第5-1-4、第10-1-9、…、第5的倍数减1个LI" class="headerlink" title="(3). 匹配第5-1=4、第10-1=9、…、第5的倍数减1个LI"></a>(3). 匹配第5-1=4、第10-1=9、…、第5的倍数减1个LI</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">li:nth-child(5n-1)&#123;</span><br><span class="line">	background:orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="倍数写法"><a href="#倍数写法" class="headerlink" title="倍数写法"></a>倍数写法</h2><h5 id="把第3、第6、第9…、所有3的倍数的LI的背景设为橙色"><a href="#把第3、第6、第9…、所有3的倍数的LI的背景设为橙色" class="headerlink" title="把第3、第6、第9…、所有3的倍数的LI的背景设为橙色:"></a>把第3、第6、第9…、所有3的倍数的LI的背景设为橙色:</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">li:nth-child(3n)&#123;</span><br><span class="line">  background:orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="倍数分组匹配："><a href="#倍数分组匹配：" class="headerlink" title="倍数分组匹配："></a>倍数分组匹配：</h2><h5 id="1-匹配第1、第4、第7、…、每3个为一组的第1个LI"><a href="#1-匹配第1、第4、第7、…、每3个为一组的第1个LI" class="headerlink" title="(1). 匹配第1、第4、第7、…、每3个为一组的第1个LI"></a>(1). 匹配第1、第4、第7、…、每3个为一组的第1个LI</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">li:nth-child(3n+1)&#123;</span><br><span class="line">  background:orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="2-匹配第5、第8、第11、…、从第5个开始每3个为一组的第1个LI"><a href="#2-匹配第5、第8、第11、…、从第5个开始每3个为一组的第1个LI" class="headerlink" title="(2). 匹配第5、第8、第11、…、从第5个开始每3个为一组的第1个LI"></a>(2). 匹配第5、第8、第11、…、从第5个开始每3个为一组的第1个LI</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">li:nth-child(3n+5)&#123;</span><br><span class="line">  background:orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="3-匹配第5-1-4、第10-1-9、…、第5的倍数减1个LI"><a href="#3-匹配第5-1-4、第10-1-9、…、第5的倍数减1个LI" class="headerlink" title="(3). 匹配第5-1=4、第10-1=9、…、第5的倍数减1个LI"></a>(3). 匹配第5-1=4、第10-1=9、…、第5的倍数减1个LI</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">li:nth-child(5n-1)&#123;</span><br><span class="line">  background:orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -523,7 +524,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -550,7 +551,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

@@ -59,6 +59,7 @@
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
 <link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+<link href="/css/grid.css?v=6.4.1" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
@@ -318,7 +319,34 @@
           
           <div id="content" class="content">
             
+<style type="text/css">
+.grid-box .container {
+  display: grid;
+  grid-gap: 5px;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 50px 350px 50px;
+  grid-template-areas:
+    "h h h h h h h h h h h h"
+    "m m c c c c c c c c c c"
+    "f f f f f f f f f f f f" ;
+}
+.grid-box .container2 {
+  grid-template-areas:
+    "h h h h h h h h h h h h"
+    "c c c c c c c c c c m m"
+    "f f f f f f f f f f f f" ;
 
+}
+.grid-box .container3 {
+  grid-template-areas:
+    ". h h h h h h h h h h ."
+    "c c c c c c c c c c m m"
+    ". f f f f f f f f f f ." ;
+}
+</style>
   <div id="posts" class="posts-expand">
     
     
@@ -369,11 +397,17 @@
                   
                 
                   
+                    
+                  
                 
-                目前共计 5 个标签
+                  
+                    
+                  
+                
+                目前共计 7 个标签
             </div>
             <div class="tag-cloud-tags">
-              <a href="/tags/CSS2/" style="font-size: 21px; color: #6f6f6f">CSS2</a> <a href="/tags/CSS3/" style="font-size: 21px; color: #6f6f6f">CSS3</a> <a href="/tags/HTML5/" style="font-size: 12px; color: #ccc">HTML5</a> <a href="/tags/JS/" style="font-size: 30px; color: #111">JS</a> <a href="/tags/hexo/" style="font-size: 12px; color: #ccc">hexo</a>
+              <a href="/tags/CSS2/" style="font-size: 18px; color: #8e8e8e">CSS2</a> <a href="/tags/CSS3/" style="font-size: 30px; color: #111">CSS3</a> <a href="/tags/ES6/" style="font-size: 12px; color: #ccc">ES6</a> <a href="/tags/HTML5/" style="font-size: 12px; color: #ccc">HTML5</a> <a href="/tags/JS/" style="font-size: 24px; color: #4f4f4f">JS</a> <a href="/tags/git/" style="font-size: 12px; color: #ccc">git</a> <a href="/tags/hexo/" style="font-size: 12px; color: #ccc">hexo</a>
             </div>
           </div>
         
@@ -435,7 +469,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -462,7 +496,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
