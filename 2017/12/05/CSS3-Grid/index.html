@@ -117,7 +117,7 @@
 <meta property="og:site_name" content="xmh">
 <meta property="og:description" content="1、HTML 结构我们需要的第一件事是一点 HTML 。 一个网格容器（将变成一个网格元素）和网格项（header, menu, content, footer）。浏览器兼容性查询 123456&amp;lt;div class=&quot;container&quot;&amp;gt;  &amp;lt;div class=&quot;header&quot;&amp;gt;HEADER&amp;lt;/div&amp;gt;  &amp;lt;div class=&quot;menu&quot;&amp;gt;ME">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-16T09:18:20.484Z">
+<meta property="og:updated_time" content="2018-11-16T09:55:23.738Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS3 Grid 布局">
 <meta name="twitter:description" content="1、HTML 结构我们需要的第一件事是一点 HTML 。 一个网格容器（将变成一个网格元素）和网格项（header, menu, content, footer）。浏览器兼容性查询 123456&amp;lt;div class=&quot;container&quot;&amp;gt;  &amp;lt;div class=&quot;header&quot;&amp;gt;HEADER&amp;lt;/div&amp;gt;  &amp;lt;div class=&quot;menu&quot;&amp;gt;ME">
@@ -380,7 +380,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-16 17:18:20" itemprop="dateModified" datetime="2018-11-16T17:18:20+08:00">2018-11-16</time>
+                <time title="修改时间：2018-11-16 17:55:23" itemprop="dateModified" datetime="2018-11-16T17:55:23+08:00">2018-11-16</time>
               
             
           </span>
@@ -414,7 +414,7 @@
 
       
         <h2 id="1、HTML-结构"><a href="#1、HTML-结构" class="headerlink" title="1、HTML 结构"></a>1、HTML 结构</h2><p>我们需要的第一件事是一点 HTML 。 一个网格容器（将变成一个网格元素）和网格项（header, menu, content, footer）。</p><a href="https://caniuse.com/#feat=css-grid" target="_blank" rel="noopener">浏览器兼容性查询
-</a><br><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"container"</span>&gt;</span><br><span class="line">  &lt;div class=<span class="string">"header"</span>&gt;HEADER&lt;/div&gt;</span><br><span class="line">  &lt;div class=<span class="string">"menu"</span>&gt;MENU&lt;/div&gt;</span><br><span class="line">  &lt;div class=<span class="string">"content"</span>&gt;CONTENT&lt;/div&gt;</span><br><span class="line">  &lt;div class=<span class="string">"footer"</span>&gt;FOOTER&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure><br><br>## 2、设置基本的 CSS<br><p>那么我们需要在 container 元素设置 display: grid; ，将其设置为网格容器，并指定我们需要多少行和列。这是基本的CSS：</p>
+</a><br><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"container"</span>&gt;</span><br><span class="line">  &lt;div class=<span class="string">"header"</span>&gt;HEADER&lt;/div&gt;</span><br><span class="line">  &lt;div class=<span class="string">"menu"</span>&gt;MENU&lt;/div&gt;</span><br><span class="line">  &lt;div class=<span class="string">"content"</span>&gt;CONTENT&lt;/div&gt;</span><br><span class="line">  &lt;div class=<span class="string">"footer"</span>&gt;FOOTER&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure><br><br><a id="more"></a><br><br>## 2、设置基本的 CSS<br><p>那么我们需要在 container 元素设置 display: grid; ，将其设置为网格容器，并指定我们需要多少行和列。这是基本的CSS：</p>
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  grid-template-columns: repeat(12, 1fr);</span><br><span class="line">  grid-template-rows: 50px 350px 50px;</span><br><span class="line">  grid-gap: 5px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>以上代码的意思是：使用 grid-template-columns 属性创建一个 12 列的网格，每个列都是一个单位宽度（总宽度的 1/12 ）。（愚人码头注：其中， repeat(12, 1fr) 意思是 12 个重复的 1fr 值。 fr 是网格容器剩余空间的等分单位。）使用 grid-template-rows 属性创建 3 行，第一行高度是 50px ，第二行高度是 350px 和第三行高度是 50px。最后，使用 grid-gap 属性在网格中的网格项之间添加一个间隙。</p>
