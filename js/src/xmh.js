@@ -6,8 +6,8 @@ function httpTohttps() {
 
 }
 function shareDemo() {
-	$('.share-demo').click(function(){ alert();
-		$('.share-demo-load').load('/xmh-demo/share/index.html')
+	$('.demo-link').click(function(){ 
+		$(this).next('iframe.demo-iframe').slideToggle("slow");		
 	});
 }
 
