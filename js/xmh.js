@@ -5,7 +5,13 @@ function httpTohttps() {
     }
 
 }
+function shareDemo() {
+	$('.share-demo').click(function(){ alert();
+		$('.share-demo-load').load('/xmh-demo/share/index.html')
+	});
+}
 
-$(document).ready(function() {
+$(document).ready(function() {alert();
   httpTohttps();
+  shareDemo();
 });
