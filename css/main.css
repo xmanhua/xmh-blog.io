@@ -1849,7 +1849,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d1babb;
+  background: #572eba;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2919,6 +2919,7 @@ hr {
 @media (max-width: 767px) {
   .container .main-inner {
     width: auto;
+    margin-top: 60px;
   }
 }
 .page-post-detail .post-title,
@@ -2931,6 +2932,11 @@ hr {
 .page-post-detail .post-meta {
   margin-bottom: 60px;
   color: #23a1c9;
+}
+@media (max-width: 767px) {
+  .page-post-detail .post-meta {
+    margin-bottom: 30px;
+  }
 }
 .pagination {
   margin: 120px 0 0;
