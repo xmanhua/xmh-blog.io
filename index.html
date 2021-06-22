@@ -176,15 +176,7 @@
    
 
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script id="ga" async src="https://www.googletagmanager.com/gtag/js?id=G-S8MWH6T56M"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-S8MWH6T56M');
-</script>
   
 
 
@@ -325,6 +317,158 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2020/06/22/git-reset-hard/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoManHua">
+      <meta itemprop="description" content="web前端笔记">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xmh">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/22/git-reset-hard/" itemprop="url">
+                  git reset --hard
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-06-22 14:13:18" itemprop="dateCreated datePublished" datetime="2020-06-22T14:13:18+08:00">2020-06-22</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-06-22 14:31:09" itemprop="dateModified" datetime="2021-06-22T14:31:09+08:00">2021-06-22</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="撤下上1次push提交-不留历史记录-记得备份"><a href="#撤下上1次push提交-不留历史记录-记得备份" class="headerlink" title="撤下上1次push提交,不留历史记录(记得备份)"></a>撤下上1次push提交,不留历史记录(<em>记得备份</em>)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. git <span class="built_in">log</span> </span><br><span class="line">2. git reset --hard a517075c66cec4f44c336//回退到a517075c66cec4f44c336版本, 这一步之前一定要保存好文件，之后就什么都没有了</span><br><span class="line">3. git push origin feature/CITC-99 -f //强制push &lt;&gt; -f,不强推会冲突，推不上，必须强推</span><br></pre></td></tr></table></figure>
+<h2 id="git-reset-–hard-ID之后-本地文件清空找回方法-如果之前每次提交之前都有git-stash的话，按以下步骤可以找回"><a href="#git-reset-–hard-ID之后-本地文件清空找回方法-如果之前每次提交之前都有git-stash的话，按以下步骤可以找回" class="headerlink" title="git reset –hard ID之后,本地文件清空找回方法(如果之前每次提交之前都有git stash的话，按以下步骤可以找回)"></a>git reset –hard ID之后,本地文件清空找回方法(如果之前每次提交之前都有git stash的话，按以下步骤可以找回)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. git fsck --lost-found</span><br><span class="line">2. 找到“悬空 commit　ID”，忽略“悬空 blob”，</span><br><span class="line">3. git show 7480ed4bba，从上到下，一个个ID找下去，直到找到文件为止</span><br><span class="line">4. 找到后，git merge 7480ed4bba, 退出</span><br><span class="line">5. git stash，再次备份文件，把文件重命名，使git reset --hard后不被丢失</span><br><span class="line">6. 再次git reset --hard 6bd3af08e008ff　恢复到撤消之前的代码，无影无踪；</span><br><span class="line">7. 手动把备份的文件恢复</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1734,162 +1878,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2015/11/03/js-get-cookie/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiaoManHua">
-      <meta itemprop="description" content="web前端笔记">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xmh">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2015/11/03/js-get-cookie/" itemprop="url">
-                  JS设置获取cookie
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2015-11-03 20:28:30" itemprop="dateCreated datePublished" datetime="2015-11-03T20:28:30+08:00">2015-11-03</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2015-07-16 16:05:00" itemprop="dateModified" datetime="2015-07-16T16:05:00+08:00">2015-07-16</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="js获取url指定参数值"><a href="#js获取url指定参数值" class="headerlink" title="js获取url指定参数值"></a>js获取url指定参数值</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> getCookie(cname) &#123;</span><br><span class="line">  var name = cname + <span class="string">"="</span>;</span><br><span class="line">  var ca = document.cookie.split(<span class="string">';'</span>);</span><br><span class="line">  <span class="keyword">for</span>(var i = 0; i &lt; ca.length; i++) &#123;</span><br><span class="line">      var c = ca[i];</span><br><span class="line">      <span class="keyword">while</span> (c.charAt(0) == <span class="string">' '</span>) &#123;</span><br><span class="line">      c = c.substring(1);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (c.indexOf(name) == 0) &#123;</span><br><span class="line">          <span class="built_in">return</span> c.substring(name.length, c.length);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> <span class="string">""</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2015/11/03/js-get-cookie/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1938,7 +1926,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1950,7 +1938,7 @@
                 
                 
                 <div class="site-state-item site-state-tags">
-                  
+                  <a href="/tags/index.html">
                     
                     
                       
@@ -1969,7 +1957,7 @@
                     
                     <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">标签</span>
-                  
+                  </a>
                 </div>
               
             </nav>
@@ -2148,6 +2136,16 @@
 
 
   <script type="text/javascript" src="/js/src/xmh.js?v=6.4.1"></script>
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8MWH6T56M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S8MWH6T56M');
+</script>
 
 
 

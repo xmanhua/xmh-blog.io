@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[git reset --hard]]></title>
+    <url>%2F2020%2F06%2F22%2Fgit-reset-hard%2F</url>
+    <content type="text"><![CDATA[撤下上1次push提交,不留历史记录(记得备份)1231. git log 2. git reset --hard a517075c66cec4f44c336//回退到a517075c66cec4f44c336版本, 这一步之前一定要保存好文件，之后就什么都没有了3. git push origin feature/CITC-99 -f //强制push &lt;&gt; -f,不强推会冲突，推不上，必须强推 git reset –hard ID之后,本地文件清空找回方法(如果之前每次提交之前都有git stash的话，按以下步骤可以找回)12345671. git fsck --lost-found2. 找到“悬空 commit ID”，忽略“悬空 blob”，3. git show 7480ed4bba，从上到下，一个个ID找下去，直到找到文件为止4. 找到后，git merge 7480ed4bba, 退出5. git stash，再次备份文件，把文件重命名，使git reset --hard后不被丢失6. 再次git reset --hard 6bd3af08e008ff 恢复到撤消之前的代码，无影无踪；7. 手动把备份的文件恢复]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hexo-world]]></title>
     <url>%2F2019%2F03%2F01%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick Start1234npm install 或：npm install -g hexo //全局安装hexohexo server //启动服务器//打开浏览器, 在地址栏输入http://localhost:4000（如果打不开，提示：localhost 意外终止了连接，//电脑端口被占用了，hexo server -p 5000，换成5000端口，果断可以访问 http://localhost:5000） More info: Server 部署网站需要的配置12345添加在_config.yml最后面:deploy: type:git repo: https://xmh.com/my/my.io.git/ //远程文件branch: master //远程分支 安装部署使用到的git插件.1npm install hexo-deployer-git --save 新建一篇文章123hexo new "My New Post"hexo new post CSS-ie6hexo new page CSS3-Grid.md 编辑模板12路径:hexo\source\_posts模板:例CSS-ie6.md More info: Writing 发表草稿1hexo publish [layout] &lt;filename&gt; 生成静态文件1hexo g More info: Generating 部署网站1234hexo d//如果在部署出现错误信息如果下: ERROR Deployer not found: git//需要安装git插件: npm install hexo-deployer-git --save//进行自动部署网站, 注意部署前需要重新生成网站hexo g, 每一次修改后都需要重新生成网站 More info: Deployment 清除缓存文件1hexo clean]]></content>
