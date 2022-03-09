@@ -333,7 +333,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2021/01/27/hexo-跨域方法/">
+    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2021/12/25/js-DOMNodeInserted/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiaoManHua">
@@ -352,8 +352,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2021/01/27/hexo-跨域方法/" itemprop="url">
-                  hexo-跨域方法
+                <a class="post-title-link" href="/2021/12/25/js-DOMNodeInserted/" itemprop="url">
+                  js-监听元素DOMNodeInserted和DOMNodeRemoved
                 </a>
               
             
@@ -379,7 +379,7 @@
                 
               
 
-              <time title="创建时间：2021-01-27 11:56:15" itemprop="dateCreated datePublished" datetime="2021-01-27T11:56:15+08:00">2021-01-27</time>
+              <time title="创建时间：2021-12-25 15:30:37" itemprop="dateCreated datePublished" datetime="2021-12-25T15:30:37+08:00">2021-12-25</time>
             
 
             
@@ -396,7 +396,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2021-09-27 12:51:59" itemprop="dateModified" datetime="2021-09-27T12:51:59+08:00">2021-09-27</time>
+                <time title="修改时间：2022-02-25 15:36:12" itemprop="dateModified" datetime="2022-02-25T15:36:12+08:00">2022-02-25</time>
               
             
           </span>
@@ -431,10 +431,12 @@
       
         
           
-            <h2 id="hexo-跨域方法"><a href="#hexo-跨域方法" class="headerlink" title="hexo 跨域方法"></a>hexo 跨域方法</h2><p><a href="./xmh-demo/mimall" target="_blank">案例demo</a></p>
-<h4 id="1-安装http-proxy-middleware："><a href="#1-安装http-proxy-middleware：" class="headerlink" title="1.安装http-proxy-middleware："></a>1.安装http-proxy-middleware：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev http-proxy-middleware</span><br></pre></td></tr></table></figure>
-<h4 id="2-新增文件-themes-landscape-scripts-http-proxy-middleware-js"><a href="#2-新增文件-themes-landscape-scripts-http-proxy-middleware-js" class="headerlink" title="2.新增文件 themes/landscape/scripts/http_proxy_middleware.js:"></a>2.新增文件 themes/landscape/scripts/http_proxy_middleware.js:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">const &#123; createProxyMiddleware &#125; = require(<span class="string">'http-proxy-middleware'</span>);</span><br><span class="line"></span><br><span class="line">const apiProxy = createProxyMiddleware(<span class="string">'/api'</span>, &#123;</span><br><span class="line">  target: <span class="string">'http://baidu.com'</span>,</span><br><span class="line">  changeOrigin: <span class="literal">true</span>,</span><br><span class="line">  pathRewrite: &#123;</span><br><span class="line">    <span class="string">'^/api/'</span>: <span class="string">'/'</span>, // rewrite path 将链接中的 /api/ 替换为 <span class="string">'/'</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">hexo.extend.filter.register(<span class="string">'server_middleware'</span>, <span class="keyword">function</span>(app)&#123;</span><br><span class="line">  // 表示以 api 开头的请求将被转发</span><br><span class="line">  app.use(<span class="string">'/api'</span>, apiProxy);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h4 id="3-重启项目即可hexo-server，出现以下信息表示配置成功："><a href="#3-重启项目即可hexo-server，出现以下信息表示配置成功：" class="headerlink" title="3.重启项目即可hexo server，出现以下信息表示配置成功："></a>3.重启项目即可hexo server，出现以下信息表示配置成功：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[HPM] Proxy created: /api  -&gt; http://baidu.com</span><br><span class="line">[HPM] Proxy rewrite rule created: <span class="string">"^/api/"</span> ~&gt; <span class="string">"/"</span></span><br></pre></td></tr></table></figure>
+            <h4 id="监听document元素"><a href="#监听document元素" class="headerlink" title="监听document元素:"></a>监听document元素:</h4><pre><code class="bash">$(document)
+        .on(<span class="string">'DOMNodeInserted'</span>, <span class="string">'.item-content .ajax-progress'</span>, <span class="function"><span class="title">function</span></span>() {})　// 插入(DOMNodeInserted)
+        .on(<span class="string">'DOMNodeRemoved'</span>, <span class="string">'#edit-field-qc-publisher-button + .ajax-progress'</span>, <span class="function"><span class="title">function</span></span>() {}) //删除(DOMNodeRemoved)
+};
+</code></pre>
+
           
         
       
@@ -487,7 +489,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2020/08/31/mixins-scss/">
+    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2021/09/25/css-normalize-css/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiaoManHua">
@@ -506,7 +508,327 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/08/31/mixins-scss/" itemprop="url">
+                <a class="post-title-link" href="/2021/09/25/css-normalize-css/" itemprop="url">
+                  normalize.css
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-09-25 15:40:10" itemprop="dateCreated datePublished" datetime="2021-09-25T15:40:10+08:00">2021-09-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-02-25 15:55:10" itemprop="dateModified" datetime="2022-02-25T15:55:10+08:00">2022-02-25</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="软件简介"><a href="#软件简介" class="headerlink" title="软件简介"></a>软件简介</h2><p><a href="https://github.com/necolas/normalize.css/" target="_blank" rel="noopener">https://github.com/necolas/normalize.css/</a><br>Normalize.css 是一个可以定制的CSS文件，它让不同的浏览器在渲染网页元素的时候形式更统一。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save normalize.css</span><br></pre></td></tr></table></figure>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">main.js全局引入</span><br><span class="line">import <span class="string">'normalize.css'</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2021/09/25/css-normalize-css/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2021/09/25/js-剩余天数/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoManHua">
+      <meta itemprop="description" content="web前端笔记">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xmh">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/09/25/js-剩余天数/" itemprop="url">
+                  js-传入日期减去当前日期,得到剩余天数
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-09-25 15:27:35" itemprop="dateCreated datePublished" datetime="2021-09-25T15:27:35+08:00">2021-09-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-02-25 15:28:52" itemprop="dateModified" datetime="2022-02-25T15:28:52+08:00">2022-02-25</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="传入日期减去当前日期-得到剩余天数"><a href="#传入日期减去当前日期-得到剩余天数" class="headerlink" title="传入日期减去当前日期,得到剩余天数:"></a>传入日期减去当前日期,得到剩余天数:</h4><pre><code class="bash">const calculateDate = (days) =&gt; {
+    const myDate = new Date();
+    const myToday = `<span class="variable">${myDate.getFullYear()}</span>-<span class="variable">${myDate.getMonth() + 1}</span>-<span class="variable">${myDate.getDate()}</span>`;
+    const date1 = new Date(days);
+    // console.log(<span class="string">'myToday'</span>, myToday);
+    const today = new Date(myToday);
+    // const date2=new Date(yyyy-MM-dd);
+    const date = (date1.getTime() - today.getTime()) / (1000 * 60 * 60 * 24); // 不考虑闰年否
+    <span class="built_in">return</span> date.toFixed(0);
+};
+</code></pre>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2021/08/31/mixins-scss/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoManHua">
+      <meta itemprop="description" content="web前端笔记">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xmh">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/08/31/mixins-scss/" itemprop="url">
                   mixins.scss
                 </a>
               
@@ -533,7 +855,7 @@
                 
               
 
-              <time title="创建时间：2020-08-31 14:45:52" itemprop="dateCreated datePublished" datetime="2020-08-31T14:45:52+08:00">2020-08-31</time>
+              <time title="创建时间：2021-08-31 14:45:52" itemprop="dateCreated datePublished" datetime="2021-08-31T14:45:52+08:00">2021-08-31</time>
             
 
             
@@ -550,7 +872,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2021-08-31 15:59:05" itemprop="dateModified" datetime="2021-08-31T15:59:05+08:00">2021-08-31</time>
+                <time title="修改时间：2022-03-09 16:30:07" itemprop="dateModified" datetime="2022-03-09T16:30:07+08:00">2022-03-09</time>
               
             
           </span>
@@ -584,318 +906,10 @@
 
       
         
-          
-            <h2 id="mixins-scss"><a href="#mixins-scss" class="headerlink" title="mixins.scss"></a>mixins.scss</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br></pre></td><td class="code"><pre><span class="line">@mixin text-line-clamp(<span class="variable">$line</span>: 2) &#123;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  display: -webkit-box;</span><br><span class="line">  -webkit-box-orient: vertical;</span><br><span class="line">  -webkit-line-clamp: <span class="variable">$line</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@mixin glyphicon(<span class="variable">$mark</span>) &#123;</span><br><span class="line">  content: <span class="string">'#&#123;$mark&#125;'</span>;</span><br><span class="line">  font-family: <span class="string">'Glyphicons Halflings'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@mixin image-<span class="function"><span class="title">zoom</span></span>() &#123;</span><br><span class="line">  transition: all 0.4s ease-out;</span><br><span class="line">  &amp;:hover &#123;</span><br><span class="line">    transform: scale(1.15);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@mixin object-<span class="function"><span class="title">fit</span></span>() &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  left: 0;</span><br><span class="line">  top: 0;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 100%;</span><br><span class="line">  object-fit: cover;</span><br><span class="line">  font-family: <span class="string">'object-fit: cover;'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Safari image border-radius</span><br><span class="line">@mixin mask-<span class="function"><span class="title">image</span></span>() &#123;</span><br><span class="line">  -webkit-mask-image: -webkit-radial-gradient(white, black);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@mixin readmore(<span class="variable">$color</span>: <span class="variable">$pink</span>) &#123;</span><br><span class="line">  color: <span class="variable">$color</span>;</span><br><span class="line">  text-transform: uppercase;</span><br><span class="line">  text-decoration: none;</span><br><span class="line">  &amp;::after &#123;</span><br><span class="line">    @include glyphicon(<span class="string">'\e072'</span>);</span><br><span class="line">    display: inline-block;</span><br><span class="line">    font-size: 12px;</span><br><span class="line">    font-weight: 500;</span><br><span class="line">    transition: padding .25s;</span><br><span class="line">    transform: scale(.8);</span><br><span class="line">    -webkit-transform: scale(.8);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  &amp;:hover::after,</span><br><span class="line">  &amp;:focus::after,</span><br><span class="line">  &amp;:active::after &#123;</span><br><span class="line">    padding-left: 8px;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@mixin position(<span class="variable">$pos</span>:absolute,<span class="variable">$top</span>:0,<span class="variable">$con</span>:<span class="string">''</span>,<span class="variable">$w</span>:100%,<span class="variable">$h</span>:100%)&#123;</span><br><span class="line">  position: <span class="variable">$pos</span>;</span><br><span class="line">  top: <span class="variable">$top</span>;</span><br><span class="line">  content: <span class="variable">$con</span>;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  width: <span class="variable">$w</span>;</span><br><span class="line">  height: <span class="variable">$h</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@mixin change-color(<span class="variable">$normal</span>: <span class="variable">$primary</span>-shade, <span class="variable">$highlight</span>: <span class="variable">$primary</span>-dark) &#123;</span><br><span class="line">  color: <span class="variable">$normal</span>;</span><br><span class="line"></span><br><span class="line">  &amp;:hover,</span><br><span class="line">  &amp;:active &#123;</span><br><span class="line">    color: <span class="variable">$highlight</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@mixin <span class="function"><span class="title">moveup</span></span>() &#123;</span><br><span class="line">  transform: translateY(-10px);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@mixin add-shadow(<span class="variable">$x</span>:4px, <span class="variable">$y</span>:6px, <span class="variable">$width</span>:8px, <span class="variable">$color</span>: rgba(0, 0, 0, .3)) &#123;</span><br><span class="line">  box-shadow: <span class="variable">$x</span> <span class="variable">$y</span> <span class="variable">$width</span> <span class="variable">$color</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@mixin content-title &#123;</span><br><span class="line">  font-size: 28px;</span><br><span class="line">  font-weight: 900;</span><br><span class="line">  letter-spacing: -0.02rem;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@mixin page-title &#123;</span><br><span class="line">  font-size: 32px;</span><br><span class="line">  font-weight: 900;</span><br><span class="line">  line-height: 40px;</span><br><span class="line"></span><br><span class="line">  @media (max-width: 1200px) &#123;</span><br><span class="line">    font-size: 30px;</span><br><span class="line">    line-height: 1.4;</span><br><span class="line">    letter-spacing: -0.33px;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@mixin flex(<span class="variable">$hov</span>: space-between, <span class="variable">$col</span>: center) &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  justify-content: <span class="variable">$hov</span>;</span><br><span class="line">  align-items: <span class="variable">$col</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@mixin bgImg(<span class="variable">$w</span>: 100%, <span class="variable">$h</span>: 100%, <span class="variable">$img</span>: <span class="string">""</span>, <span class="variable">$size</span>: 100%) &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  width: <span class="variable">$w</span>;</span><br><span class="line">  height: <span class="variable">$h</span>;</span><br><span class="line">  background: url(<span class="variable">$img</span>) no-repeat center;</span><br><span class="line">  background-size: <span class="variable">$size</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@mixin <span class="built_in">bg</span>-width-full(<span class="variable">$bg</span>) &#123;</span><br><span class="line">  background: <span class="variable">$bg</span>;</span><br><span class="line">  position: relative;</span><br><span class="line">  &amp;::before,</span><br><span class="line">  &amp;::after &#123;</span><br><span class="line">    @include position(<span class="variable">$w</span>: 20%);</span><br><span class="line">    left: -20%;</span><br><span class="line">    background: <span class="variable">$bg</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  &amp;::after &#123;</span><br><span class="line">    right: -20%;</span><br><span class="line">    left: auto;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@mixin button(<span class="variable">$w</span>: 189px, <span class="variable">$h</span>: 53px, <span class="variable">$fcolor</span>: <span class="comment">#000, $bg: $ui-yellow,$h-bg: $dark-yellow,</span></span><br><span class="line"><span class="variable">$fz</span>: 16px) &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  width: <span class="variable">$w</span>;</span><br><span class="line">  height: <span class="variable">$h</span>;</span><br><span class="line">  line-height: <span class="variable">$h</span>;</span><br><span class="line">  color: <span class="variable">$fcolor</span>;</span><br><span class="line">  text-transform: uppercase;</span><br><span class="line">  text-decoration: none;</span><br><span class="line">  background: <span class="variable">$bg</span>;</span><br><span class="line">  border-color: <span class="variable">$bg</span>;</span><br><span class="line">  font-size: <span class="variable">$fz</span>;</span><br><span class="line">  font-weight: bold;</span><br><span class="line">  &amp;:hover &#123;</span><br><span class="line">    background: <span class="variable">$h</span>-<span class="built_in">bg</span>;</span><br><span class="line">    border-color: <span class="variable">$h</span>-<span class="built_in">bg</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@mixin down-arrow(<span class="variable">$color</span>: <span class="variable">$white</span>, <span class="variable">$deg</span>: 45deg) &#123;</span><br><span class="line">  border-right: 2px solid <span class="variable">$color</span>;</span><br><span class="line">  border-bottom: 2px solid <span class="variable">$color</span>;</span><br><span class="line">  transform: rotate(<span class="variable">$deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@mixin hook-icon(<span class="variable">$color</span>: <span class="variable">$white</span>, <span class="variable">$deg</span>: -45deg) &#123;</span><br><span class="line">  border-left: 2px solid <span class="variable">$color</span>;</span><br><span class="line">  border-bottom: 2px solid <span class="variable">$color</span>;</span><br><span class="line">  transform: rotate(<span class="variable">$deg</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@mixin circular(<span class="variable">$w</span>, <span class="variable">$h</span>, <span class="variable">$bg</span>) &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  width: <span class="variable">$w</span>;</span><br><span class="line">  height: <span class="variable">$h</span>;</span><br><span class="line">  border-radius: 50%;</span><br><span class="line">  background-color: <span class="variable">$bg</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@mixin input-text(</span><br><span class="line">  <span class="variable">$p</span>: 10px,</span><br><span class="line">  <span class="variable">$h</span>: 56px,</span><br><span class="line">  <span class="variable">$w</span>: 100%,</span><br><span class="line">  <span class="variable">$br</span>: 16px,</span><br><span class="line">  <span class="variable">$bg</span>: <span class="variable">$input</span>-<span class="built_in">bg</span>,</span><br><span class="line">  <span class="variable">$fs</span>: 15px,</span><br><span class="line">  <span class="variable">$color</span>: <span class="variable">$dusk</span></span><br><span class="line">) &#123;</span><br><span class="line">  box-sizing: border-box;</span><br><span class="line">  padding: <span class="variable">$p</span>;</span><br><span class="line">  border: none;</span><br><span class="line">  border-radius: <span class="variable">$br</span>;</span><br><span class="line">  background: none;</span><br><span class="line">  background-color: <span class="variable">$bg</span>;</span><br><span class="line">  width: <span class="variable">$w</span>;</span><br><span class="line">  height: <span class="variable">$h</span>;</span><br><span class="line">  outline: none;</span><br><span class="line">  font-size: <span class="variable">$fs</span>;</span><br><span class="line">  color: <span class="variable">$color</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@mixin select-<span class="function"><span class="title">arrow</span></span>() &#123;</span><br><span class="line">  background: <span class="variable">$input</span>-<span class="built_in">bg</span> url(../images/select-arrow.png) no-repeat</span><br><span class="line">    calc(100% - 16px) center;</span><br><span class="line">  background-size: 18px auto;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@mixin disabled-button &#123;</span><br><span class="line">  background: <span class="comment">#f5f5f5;</span></span><br><span class="line">  border: 2px solid <span class="variable">$disabled</span>;</span><br><span class="line">  color: <span class="variable">$disabled</span>;</span><br><span class="line">  cursor: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2020/06/22/git-reset-hard/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiaoManHua">
-      <meta itemprop="description" content="web前端笔记">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xmh">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/22/git-reset-hard/" itemprop="url">
-                  git reset --hard
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2020-06-22 14:13:18" itemprop="dateCreated datePublished" datetime="2020-06-22T14:13:18+08:00">2020-06-22</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2021-06-22 14:31:09" itemprop="dateModified" datetime="2021-06-22T14:31:09+08:00">2021-06-22</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="撤下上1次push提交-不留历史记录-记得备份"><a href="#撤下上1次push提交-不留历史记录-记得备份" class="headerlink" title="撤下上1次push提交,不留历史记录(记得备份)"></a>撤下上1次push提交,不留历史记录(<em>记得备份</em>)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. git <span class="built_in">log</span> </span><br><span class="line">2. git reset --hard a517075c66cec4f44c336//回退到a517075c66cec4f44c336版本, 这一步之前一定要保存好文件，之后就什么都没有了</span><br><span class="line">3. git push origin feature/CITC-99 -f //强制push &lt;&gt; -f,不强推会冲突，推不上，必须强推</span><br></pre></td></tr></table></figure>
-<h2 id="git-reset-–hard-ID之后-本地文件清空找回方法-如果之前每次提交之前都有git-stash的话，按以下步骤可以找回"><a href="#git-reset-–hard-ID之后-本地文件清空找回方法-如果之前每次提交之前都有git-stash的话，按以下步骤可以找回" class="headerlink" title="git reset –hard ID之后,本地文件清空找回方法(如果之前每次提交之前都有git stash的话，按以下步骤可以找回)"></a>git reset –hard ID之后,本地文件清空找回方法(如果之前每次提交之前都有git stash的话，按以下步骤可以找回)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. git fsck --lost-found</span><br><span class="line">2. 找到“悬空 commit　ID”，忽略“悬空 blob”，</span><br><span class="line">3. git show 7480ed4bba，从上到下，一个个ID找下去，直到找到文件为止</span><br><span class="line">4. 找到后，git merge 7480ed4bba, 退出</span><br><span class="line">5. git stash，再次备份文件，把文件重命名，使git reset --hard后不被丢失</span><br><span class="line">6. 再次git reset --hard 6bd3af08e008ff　恢复到撤消之前的代码，无影无踪；</span><br><span class="line">7. 手动把备份的文件恢复</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2019/10/31/js-form-verification/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiaoManHua">
-      <meta itemprop="description" content="web前端笔记">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xmh">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/31/js-form-verification/" itemprop="url">
-                  js 前端表单验证
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-10-31 14:15:00" itemprop="dateCreated datePublished" datetime="2019-10-31T14:15:00+08:00">2019-10-31</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2021-08-31 14:43:40" itemprop="dateModified" datetime="2021-08-31T14:43:40+08:00">2021-08-31</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="e-mail格式"><a href="#e-mail格式" class="headerlink" title="e-mail格式"></a>e-mail格式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> emailTest(obj) &#123;</span><br><span class="line">    var myreg = /^([a-zA-Z0-9\-\.]+)@([a-zA-Z0-9\-\.]+)\.([a-zA-Z]&#123;2,5&#125;)$/;</span><br><span class="line">    <span class="keyword">if</span> (!myreg.test(obj)) &#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="val-is-empty"><a href="#val-is-empty" class="headerlink" title="val is empty"></a>val is empty</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> isValEmpty(obj) &#123;</span><br><span class="line">    <span class="built_in">return</span> obj.length == 0 ? <span class="literal">false</span> : <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="form-textarea"><a href="#form-textarea" class="headerlink" title="form-textarea"></a>form-textarea</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> stripHTML(text) &#123;</span><br><span class="line">    var regex = /(&lt;([^&gt;]+)&gt;)/ig;</span><br><span class="line">    <span class="built_in">return</span> text.replace(regex, <span class="string">""</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="form-checkbox"><a href="#form-checkbox" class="headerlink" title="form-checkbox"></a>form-checkbox</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> checkboxVerification(checkbox) &#123;</span><br><span class="line">    var <span class="variable">$checkboxWrapper</span> =  checkbox.parents(<span class="string">'.form-type-checkbox'</span>);</span><br><span class="line">    <span class="keyword">if</span>(checkbox.is(<span class="string">':checked'</span>)) &#123;</span><br><span class="line">    <span class="variable">$checkboxWrapper</span>.removeClass(<span class="string">'empty-error'</span>);</span><br><span class="line">    <span class="variable">$checkboxWrapper</span>.find(<span class="string">'.empty-error-message'</span>).remove();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(isRequired) &#123;</span><br><span class="line">        isRequired = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="variable">$checkboxWrapper</span>.hasClass(<span class="string">'empty-error'</span>))&#123;</span><br><span class="line">        <span class="variable">$checkboxWrapper</span>.addClass(<span class="string">'empty-error'</span>);</span><br><span class="line">        <span class="variable">$checkboxWrapper</span>.append(<span class="string">"&lt;p class='empty-error-message'&gt;"</span> +  checkbox.attr(<span class="string">'data-webform-required-error'</span>) + <span class="string">"&lt;/p&gt;"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="form-email"><a href="#form-email" class="headerlink" title="form-email"></a>form-email</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> emailVerification (email) &#123;</span><br><span class="line">    <span class="keyword">if</span>(emailTest(email.val()) == <span class="literal">false</span>) &#123;</span><br><span class="line">    email.parent().addClass(<span class="string">'empty-error'</span>);</span><br><span class="line">    <span class="keyword">if</span>(isRequired) &#123;</span><br><span class="line">        isRequired = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    email.parent().removeClass(<span class="string">'empty-error'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <h2 id="mixins-scss"><a href="#mixins-scss" class="headerlink" title="mixins.scss"></a>mixins.scss</h2>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/10/31/js-form-verification/#more" rel="contents">
+            <a class="btn" href="/2021/08/31/mixins-scss/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -951,7 +965,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2019/03/01/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2021/08/25/css-center/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiaoManHua">
@@ -970,8 +984,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/01/hello-world/" itemprop="url">
-                  hexo-world
+                <a class="post-title-link" href="/2021/08/25/css-center/" itemprop="url">
+                  CSS3与CSS2 上下左右居中
                 </a>
               
             
@@ -997,7 +1011,7 @@
                 
               
 
-              <time title="创建时间：2019-03-01 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-01T00:00:00+08:00">2019-03-01</time>
+              <time title="创建时间：2021-08-25 14:16:33" itemprop="dateCreated datePublished" datetime="2021-08-25T14:16:33+08:00">2021-08-25</time>
             
 
             
@@ -1014,7 +1028,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-04-19 00:00:00" itemprop="dateModified" datetime="2020-04-19T00:00:00+08:00">2020-04-19</time>
+                <time title="修改时间：2022-02-25 14:29:10" itemprop="dateModified" datetime="2022-02-25T14:29:10+08:00">2022-02-25</time>
               
             
           </span>
@@ -1049,20 +1063,11 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install 或：npm install -g hexo  //全局安装hexo</span><br><span class="line">hexo server  //启动服务器</span><br><span class="line">//打开浏览器, 在地址栏输入http://localhost:4000（如果打不开，提示：localhost 意外终止了连接，</span><br><span class="line">//电脑端口被占用了，hexo server -p 5000，换成5000端口，果断可以访问 http://localhost:5000）</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h2 id="部署网站需要的配置"><a href="#部署网站需要的配置" class="headerlink" title="部署网站需要的配置"></a>部署网站需要的配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">添加在_config.yml最后面:</span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>:</span><br><span class="line">git repo: https://xmh.com/my/my.io.git/  //远程文件</span><br><span class="line">branch: master  //远程分支</span><br></pre></td></tr></table></figure>
-<h2 id="安装部署使用到的git插件"><a href="#安装部署使用到的git插件" class="headerlink" title="安装部署使用到的git插件."></a>安装部署使用到的git插件.</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<h2 id="新建一篇文章"><a href="#新建一篇文章" class="headerlink" title="新建一篇文章"></a>新建一篇文章</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"My New Post"</span></span><br><span class="line">hexo new post CSS-ie6</span><br><span class="line">hexo new page CSS3-Grid.md</span><br></pre></td></tr></table></figure>
-<h2 id="编辑模板"><a href="#编辑模板" class="headerlink" title="编辑模板"></a>编辑模板</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">路径:hexo\<span class="built_in">source</span>\_posts</span><br><span class="line">模板:例CSS-ie6.md</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h2 id="发表草稿"><a href="#发表草稿" class="headerlink" title="发表草稿"></a>发表草稿</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo publish [layout] &lt;filename&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h2 id="部署网站"><a href="#部署网站" class="headerlink" title="部署网站"></a>部署网站</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br><span class="line">//如果在部署出现错误信息如果下: ERROR Deployer not found: git</span><br><span class="line">//需要安装git插件: npm install hexo-deployer-git --save</span><br><span class="line">//进行自动部署网站, 注意部署前需要重新生成网站hexo g, 每一次修改后都需要重新生成网站</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-<h2 id="清除缓存文件"><a href="#清除缓存文件" class="headerlink" title="清除缓存文件"></a>清除缓存文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+            <h2 id="css3-上下左右居中"><a href="#css3-上下左右居中" class="headerlink" title="css3 上下左右居中:"></a>css3 上下左右居中:</h2><h4 id="1-transform-translate-左右，上下-上下左右居中"><a href="#1-transform-translate-左右，上下-上下左右居中" class="headerlink" title="1. transform:translate(左右，上下)上下左右居中:"></a>1. transform:translate(左右，上下)上下左右居中:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.video&#123;</span><br><span class="line">	position:fixed;</span><br><span class="line">	top:50%;</span><br><span class="line">	left:50%;</span><br><span class="line">	transform:translate(-50%,-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-flex-左右，上下-上下左右居中"><a href="#2-flex-左右，上下-上下左右居中" class="headerlink" title="2. flex (左右，上下)上下左右居中:"></a>2. flex (左右，上下)上下左右居中:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.container&#123;</span><br><span class="line">   display: flex;</span><br><span class="line">   align-items: center;/* 垂直居中 */</span><br><span class="line">   justify-content: center;/* center左右居中, space-between两端对齐 */</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="css2-上下左右居中"><a href="#css2-上下左右居中" class="headerlink" title="css2 上下左右居中:"></a>css2 上下左右居中:</h2><h4 id="3-position-absolute-margin-左右，上下-上下左右居中"><a href="#3-position-absolute-margin-左右，上下-上下左右居中" class="headerlink" title="3. position:absolute, margin(左右，上下)上下左右居中:"></a>3. position:absolute, margin(左右，上下)上下左右居中:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.video&#123;</span><br><span class="line">	position:absolute;</span><br><span class="line">	top:50%;</span><br><span class="line">	left:50%;</span><br><span class="line">    with: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    margin-top: -50px;</span><br><span class="line">    margin-left: -50px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-display-table-左右，上下-上下左右居中"><a href="#4-display-table-左右，上下-上下左右居中" class="headerlink" title="4. display: table(左右，上下)上下左右居中:"></a>4. display: table(左右，上下)上下左右居中:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">  display: table;</span><br><span class="line">  table-layout: fixed; //ie</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 100%;</span><br><span class="line">  text-align:center;</span><br><span class="line">&#125;</span><br><span class="line">.box div &#123;</span><br><span class="line">  display: table-cell;</span><br><span class="line">  vertical-align: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
           
         
       
@@ -1115,7 +1120,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2019/02/20/js-touch-device/">
+    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2021/07/25/gulp/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiaoManHua">
@@ -1134,8 +1139,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/02/20/js-touch-device/" itemprop="url">
-                  js 检测 touch 设备
+                <a class="post-title-link" href="/2021/07/25/gulp/" itemprop="url">
+                  gulp
                 </a>
               
             
@@ -1161,7 +1166,7 @@
                 
               
 
-              <time title="创建时间：2019-02-20 20:20:30" itemprop="dateCreated datePublished" datetime="2019-02-20T20:20:30+08:00">2019-02-20</time>
+              <time title="创建时间：2021-07-25 16:09:39" itemprop="dateCreated datePublished" datetime="2021-07-25T16:09:39+08:00">2021-07-25</time>
             
 
             
@@ -1178,7 +1183,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2021-08-31 14:43:33" itemprop="dateModified" datetime="2021-08-31T14:43:33+08:00">2021-08-31</time>
+                <time title="修改时间：2022-03-09 16:29:17" itemprop="dateModified" datetime="2022-03-09T16:29:17+08:00">2022-03-09</time>
               
             
           </span>
@@ -1212,161 +1217,11 @@
 
       
         
-          
-            <h2 id="检测-touch-设备"><a href="#检测-touch-设备" class="headerlink" title="检测 touch 设备"></a>检测 touch 设备</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> var isPC, hClick=<span class="string">'click'</span>;</span><br><span class="line"> <span class="keyword">if</span> (<span class="string">'ontouchstart'</span> <span class="keyword">in</span> window) &#123;</span><br><span class="line">   $(<span class="string">'body'</span>).addClass(<span class="string">'is-touch'</span>);</span><br><span class="line">   isPC = <span class="literal">false</span>;</span><br><span class="line">   hClick = <span class="string">'touchstart'</span>;</span><br><span class="line"> &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">   $(<span class="string">'body'</span>).addClass(<span class="string">'no-touch'</span>);</span><br><span class="line">   isPC = <span class="literal">true</span>;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$(<span class="string">'.nav-tabs'</span>).once(<span class="string">'.active'</span>).each(<span class="function"><span class="title">function</span></span> () &#123;		</span><br><span class="line">	<span class="keyword">if</span> (!isPC) &#123;</span><br><span class="line">		$(<span class="string">'.navbar-toggle'</span>).on(hClick, <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">			......</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2018/12/20/js-share/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiaoManHua">
-      <meta itemprop="description" content="web前端笔记">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xmh">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/20/js-share/" itemprop="url">
-                  分享 share
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-20 20:20:30" itemprop="dateCreated datePublished" datetime="2018-12-20T20:20:30+08:00">2018-12-20</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-14 15:05:00" itemprop="dateModified" datetime="2019-01-14T15:05:00+08:00">2019-01-14</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="share-HTML-加copy"><a href="#share-HTML-加copy" class="headerlink" title="share HTML 加copy"></a>share HTML 加copy</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"addtoany_list"</span>&gt;</span><br><span class="line">  &lt;div class=<span class="string">"share-button"</span>&gt;&lt;em&gt;&lt;/em&gt;&lt;span&gt;分享至&lt;/span&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=<span class="string">"social-share"</span>  data-initialized=<span class="string">"true"</span>&gt;</span><br><span class="line">   &lt;a class=<span class="string">"social-share-icon icon-weibo"</span> href=<span class="string">"#"</span>&gt;&amp;nbsp;&lt;/a&gt;</span><br><span class="line">   &lt;a class=<span class="string">"social-share-icon icon-wechat"</span> href=<span class="string">"#"</span>&gt;&amp;nbsp;&lt;/a&gt;</span><br><span class="line">   &lt;a class=<span class="string">"social-share-icon icon-copy"</span> href=<span class="string">"javascript:"</span>&gt;&amp;nbsp;&lt;/a&gt;</span><br><span class="line">   &lt;div class=<span class="string">"copy-success"</span>&gt;复制成功&lt;/div&gt;</span><br><span class="line">   &lt;div class=<span class="string">"copy-error"</span>&gt;请手动<span class="string">"复制"</span>&lt;/div&gt;           </span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+          <h2 id="安装gulp"><a href="#安装gulp" class="headerlink" title="安装gulp"></a>安装gulp</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i gulp gulp-cli -g</span><br></pre></td></tr></table></figure>
+<h2 id="在当前themes下编译"><a href="#在当前themes下编译" class="headerlink" title="在当前themes下编译:"></a>在当前themes下编译:</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gulp sass</span><br><span class="line">gulp build</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/12/20/js-share/#more" rel="contents">
+            <a class="btn" href="/2021/07/25/gulp/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1422,7 +1277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2018/11/15/CSS3-Columns/">
+    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2021/04/25/css-transform/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiaoManHua">
@@ -1441,8 +1296,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/15/CSS3-Columns/" itemprop="url">
-                  CSS Multi-column Layout(CSS多列布局)
+                <a class="post-title-link" href="/2021/04/25/css-transform/" itemprop="url">
+                  hover时向上动画:transform
                 </a>
               
             
@@ -1468,7 +1323,7 @@
                 
               
 
-              <time title="创建时间：2018-11-15 11:56:54" itemprop="dateCreated datePublished" datetime="2018-11-15T11:56:54+08:00">2018-11-15</time>
+              <time title="创建时间：2021-04-25 11:56:39" itemprop="dateCreated datePublished" datetime="2021-04-25T11:56:39+08:00">2021-04-25</time>
             
 
             
@@ -1485,7 +1340,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-16 17:46:02" itemprop="dateModified" datetime="2018-11-16T17:46:02+08:00">2018-11-16</time>
+                <time title="修改时间：2022-02-25 14:14:11" itemprop="dateModified" datetime="2022-02-25T14:14:11+08:00">2022-02-25</time>
               
             
           </span>
@@ -1519,11 +1374,162 @@
 
       
         
-          <p></p><p>CSS Columns 是一种定义了多栏布局的模块，它能够表现出将内容在列之间怎么流动的以及间隙和分割线怎么使用。浏览器兼容性: IE10,IE10+</p>More info: <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Columns" target="_blank" rel="noopener">CSS Columns
-</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">. columns /* 3 30px */</span><br><span class="line">. column-count /* 最理想的分栏数目 */</span><br><span class="line">. column-width /* 每栏的最小宽度 */</span><br><span class="line">. column-rule /* 使用方法同border */</span><br><span class="line">. column-rule-width</span><br><span class="line">. column-rule-style</span><br><span class="line">. column-rule-color</span><br><span class="line">. column-gap /* 栏目之间的水平间隙 */</span><br><span class="line">. column-fill /* 定义栏目的高度是否统一 */</span><br><span class="line">. column-span /* all, none */</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">column-count: 浏览器缩放保持设定数量的列</span><br><span class="line">column-width: 浏览器缩放不能容纳足够的列，列的数量会 -1，直至单列</span><br><span class="line"></span><br><span class="line">同时声明这两个属性时，column-count是最大列数，并且column-width是这些列的最小宽度。</span><br><span class="line">columns: 120px;         /* column-width: 120px; column-count: auto */</span><br><span class="line">columns: auto 120px;    /* column-width: 120px; column-count: auto */</span><br><span class="line">columns: 2;             /* column-width: auto; column-count: 2 */</span><br><span class="line">columns: 2 auto;        /* column-width: auto; column-count: 2 */</span><br><span class="line">columns: auto;          /* column-width: auto; column-count: auto */</span><br><span class="line">columns: auto auto;       /* column-width: auto; column-count: auto */</span><br></pre></td></tr></table></figure><p></p>
+          
+            <h3 id="hover时向上动画-transform-translateY-10px"><a href="#hover时向上动画-transform-translateY-10px" class="headerlink" title="hover时向上动画:transform: translateY(-10px):"></a>hover时向上动画:transform: translateY(-10px):</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">.col-md-6 .item &#123;</span><br><span class="line">    display: block;</span><br><span class="line">    background: <span class="comment">#FDEBEC;</span></span><br><span class="line">    padding: 10px 20px 15px 20px;</span><br><span class="line">    border-radius: 5px;</span><br><span class="line">    -webkit-transition: all 0.2s ease-in-out;</span><br><span class="line">    -o-transition: all 0.2s ease-in-out;</span><br><span class="line">    transition: all 0.2s ease-in-out;</span><br><span class="line">&#125;</span><br><span class="line">.col-md-6:hover .item &#123;</span><br><span class="line">    -webkit-transform: scale(1.02);</span><br><span class="line">    -ms-transform: scale(1.02);</span><br><span class="line">    transform: scale(1.02);</span><br><span class="line">    -webkit-box-shadow: 4px 10px 8px rgb(0 0 0 / 30%);</span><br><span class="line">    box-shadow: 4px 10px 8px rgb(0 0 0 / 30%);</span><br><span class="line">    -webkit-transform: translateY(-10px);</span><br><span class="line">    -ms-transform: translateY(-10px);</span><br><span class="line">    transform: translateY(-10px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2021/03/25/css-transition过滤/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoManHua">
+      <meta itemprop="description" content="web前端笔记">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xmh">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/03/25/css-transition过滤/" itemprop="url">
+                  transition过滤
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-03-25 13:04:01" itemprop="dateCreated datePublished" datetime="2021-03-25T13:04:01+08:00">2021-03-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-02-25 13:12:12" itemprop="dateModified" datetime="2022-02-25T13:12:12+08:00">2022-02-25</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="transition过渡"><a href="#transition过渡" class="headerlink" title="transition过渡;"></a>transition过渡;</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">1. transition margin :</span><br><span class="line"> a &#123;</span><br><span class="line">    transition: margin .2s;/* 指定margin过渡２秒 */</span><br><span class="line">    /*transition:all .2s; 指定所有过渡２秒  */</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">2. transition hover放大1.5倍：scale(1.5)</span><br><span class="line">.icon-close&#123;</span><br><span class="line">  @include positionImg(absolute,23px,25px,14px,14px,<span class="string">'/imgs/icon-close.png'</span>);</span><br><span class="line">  transition: transform .3s;</span><br><span class="line">  &amp;:hover&#123;</span><br><span class="line">    transform: scale(1.5);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/15/CSS3-Columns/#more" rel="contents">
+            <a class="btn" href="/2021/03/25/css-transition过滤/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1579,7 +1585,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2018/05/19/ES6-study-notes/">
+    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2021/02/25/js-input/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiaoManHua">
@@ -1598,8 +1604,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/19/ES6-study-notes/" itemprop="url">
-                  ES6 学习笔记
+                <a class="post-title-link" href="/2021/02/25/js-input/" itemprop="url">
+                  js-input
                 </a>
               
             
@@ -1625,7 +1631,7 @@
                 
               
 
-              <time title="创建时间：2018-05-19 13:28:50" itemprop="dateCreated datePublished" datetime="2018-05-19T13:28:50+08:00">2018-05-19</time>
+              <time title="创建时间：2021-02-25 15:21:29" itemprop="dateCreated datePublished" datetime="2021-02-25T15:21:29+08:00">2021-02-25</time>
             
 
             
@@ -1642,7 +1648,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-01 12:00:00" itemprop="dateModified" datetime="2018-09-01T12:00:00+08:00">2018-09-01</time>
+                <time title="修改时间：2022-02-25 15:25:57" itemprop="dateModified" datetime="2022-02-25T15:25:57+08:00">2022-02-25</time>
               
             
           </span>
@@ -1676,17 +1682,27 @@
 
       
         
-          <h2 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h2><p>promise: 承诺，许诺<br>作用： 解决异步问题 (例如:用户登录-&gt;获取用户信息)<br>传统方式，大部分用回调函数，事件<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/19/ES6-study-notes/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <h4 id="input只能输入数字与小数点并且是0-25的倍数"><a href="#input只能输入数字与小数点并且是0-25的倍数" class="headerlink" title="input只能输入数字与小数点并且是0.25的倍数:"></a>input只能输入数字与小数点并且是0.25的倍数:</h4><pre><code class="bash">$(<span class="string">'#input'</span>).on(<span class="string">'keyup'</span>, <span class="function"><span class="title">function</span></span>() {
+      const value = $(this).val();
+      <span class="built_in">let</span> replaceVal = value.replace(/[^0-9.]/g, <span class="string">''</span>);//输入的值只能为数字与小数点
+      <span class="keyword">if</span> (replaceVal.length === 1 &amp;&amp; replaceVal === <span class="string">'0'</span>) {//第一位数字不能为０,为０时自动清空
+        replaceVal = <span class="string">''</span>;
+      }
+      $(this).val(replaceVal);
+      //这行对数据+字母无效: const regex = /\b[0-9]+\.(?:25|5|75)|(?&lt;!\.|\d)[1-9]\d*(?!\.)/;
+      // <span class="keyword">if</span> (!regex.test(replaceVal)) {
+
+      <span class="keyword">if</span> (replaceVal % 0.25 !== 0) {//输入的数字必须是０.２５的倍数
+        $(<span class="string">'.error-msg'</span>).html(Drupal.t(<span class="string">'Please enter a multiple 0f 0.25.'</span>));
+      }
+  })
+</code></pre>
+
+          
         
       
-    </p></div>
+    </div>
 
     
 
@@ -1735,7 +1751,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2017/12/05/CSS3-Grid/">
+    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2021/02/25/css3-img-fit/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xiaoManHua">
@@ -1754,8 +1770,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/05/CSS3-Grid/" itemprop="url">
-                  CSS3 Grid 布局
+                <a class="post-title-link" href="/2021/02/25/css3-img-fit/" itemprop="url">
+                  图片按比例设置
                 </a>
               
             
@@ -1781,7 +1797,7 @@
                 
               
 
-              <time title="创建时间：2017-12-05 19:56:54" itemprop="dateCreated datePublished" datetime="2017-12-05T19:56:54+08:00">2017-12-05</time>
+              <time title="创建时间：2021-02-25 09:33:32" itemprop="dateCreated datePublished" datetime="2021-02-25T09:33:32+08:00">2021-02-25</time>
             
 
             
@@ -1798,7 +1814,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-16 17:55:23" itemprop="dateModified" datetime="2018-11-16T17:55:23+08:00">2018-11-16</time>
+                <time title="修改时间：2022-02-25 10:43:49" itemprop="dateModified" datetime="2022-02-25T10:43:49+08:00">2022-02-25</time>
               
             
           </span>
@@ -1832,11 +1848,10 @@
 
       
         
-          <h2 id="1、HTML-结构"><a href="#1、HTML-结构" class="headerlink" title="1、HTML 结构"></a>1、HTML 结构</h2><p>我们需要的第一件事是一点 HTML 。 一个网格容器（将变成一个网格元素）和网格项（header, menu, content, footer）。</p><a href="https://caniuse.com/#feat=css-grid" target="_blank" rel="noopener">浏览器兼容性查询
-</a><br><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"container"</span>&gt;</span><br><span class="line">  &lt;div class=<span class="string">"header"</span>&gt;HEADER&lt;/div&gt;</span><br><span class="line">  &lt;div class=<span class="string">"menu"</span>&gt;MENU&lt;/div&gt;</span><br><span class="line">  &lt;div class=<span class="string">"content"</span>&gt;CONTENT&lt;/div&gt;</span><br><span class="line">  &lt;div class=<span class="string">"footer"</span>&gt;FOOTER&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure><br><br>
+          <h3 id="图片按比例设置"><a href="#图片按比例设置" class="headerlink" title="图片按比例设置:"></a>图片按比例设置:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">mixin img-<span class="function"><span class="title">fit</span></span>() &#123;</span><br><span class="line">  object-fit: cover;</span><br><span class="line">  object-position: 50% 50%;</span><br><span class="line">  // font-family: <span class="string">'object-fit: cover; object-position: 50% 50%'</span>;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 100%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">%img-fit &#123;</span><br><span class="line">  @include img-fit();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.responsive-media &#123;</span><br><span class="line">  display: block;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  padding: 0;</span><br><span class="line">  position: relative;</span><br><span class="line">  background: transparent;</span><br><span class="line">  z-index: 1;</span><br><span class="line">  img,</span><br><span class="line">  picture,</span><br><span class="line">  iframe,</span><br><span class="line">  embed,</span><br><span class="line">  object,</span><br><span class="line">  video &#123;</span><br><span class="line">    @extend %img-fit;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    left: 0;</span><br><span class="line">    z-index: 1;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@mixin responsive-ratio(<span class="variable">$x</span>,<span class="variable">$y</span>) &#123;</span><br><span class="line">  height: 0;</span><br><span class="line">  padding-bottom: percentage(<span class="variable">$y</span> / <span class="variable">$x</span>);</span><br><span class="line">&#125;</span><br><span class="line">.responsive-media&#123;</span><br><span class="line">@include responsive-ratio(2, 3);//图片２：3</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/05/CSS3-Grid/#more" rel="contents">
+            <a class="btn" href="/2021/02/25/css3-img-fit/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1881,7 +1896,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1925,7 +1940,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">39</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1954,7 +1969,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1994,7 +2017,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
   <span class="with-love" id="animate">
     <i class="fa fa-xiaoManHua"></i>
   </span>

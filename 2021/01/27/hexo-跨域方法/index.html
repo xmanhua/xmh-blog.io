@@ -109,18 +109,18 @@
 
 
 
-  <meta name="description" content="hexo 跨域方法案例demo 1.安装http-proxy-middleware：1npm install --save-dev http-proxy-middleware 2.新增文件 themes/landscape/scripts/http_proxy_middleware.js:1234567891011121314const &amp;#123; createProxyMiddleware &amp;">
+  <meta name="description" content="hexo 跨域方法案例demo 1.安装http-proxy-middleware：1npm install --save-dev http-proxy-middleware">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo-跨域方法">
 <meta property="og:url" content="https://xmh-web.com/2021/01/27/hexo-跨域方法/index.html">
 <meta property="og:site_name" content="xmh">
-<meta property="og:description" content="hexo 跨域方法案例demo 1.安装http-proxy-middleware：1npm install --save-dev http-proxy-middleware 2.新增文件 themes/landscape/scripts/http_proxy_middleware.js:1234567891011121314const &amp;#123; createProxyMiddleware &amp;">
+<meta property="og:description" content="hexo 跨域方法案例demo 1.安装http-proxy-middleware：1npm install --save-dev http-proxy-middleware">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-09-27T04:51:59.964Z">
+<meta property="og:updated_time" content="2022-02-25T07:17:50.358Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo-跨域方法">
-<meta name="twitter:description" content="hexo 跨域方法案例demo 1.安装http-proxy-middleware：1npm install --save-dev http-proxy-middleware 2.新增文件 themes/landscape/scripts/http_proxy_middleware.js:1234567891011121314const &amp;#123; createProxyMiddleware &amp;">
+<meta name="twitter:description" content="hexo 跨域方法案例demo 1.安装http-proxy-middleware：1npm install --save-dev http-proxy-middleware">
 
 
 
@@ -393,7 +393,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2021-09-27 12:51:59" itemprop="dateModified" datetime="2021-09-27T12:51:59+08:00">2021-09-27</time>
+                <time title="修改时间：2022-02-25 15:17:50" itemprop="dateModified" datetime="2022-02-25T15:17:50+08:00">2022-02-25</time>
               
             
           </span>
@@ -428,6 +428,7 @@
       
         <h2 id="hexo-跨域方法"><a href="#hexo-跨域方法" class="headerlink" title="hexo 跨域方法"></a>hexo 跨域方法</h2><p><a href="./xmh-demo/mimall" target="_blank">案例demo</a></p>
 <h4 id="1-安装http-proxy-middleware："><a href="#1-安装http-proxy-middleware：" class="headerlink" title="1.安装http-proxy-middleware："></a>1.安装http-proxy-middleware：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev http-proxy-middleware</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h4 id="2-新增文件-themes-landscape-scripts-http-proxy-middleware-js"><a href="#2-新增文件-themes-landscape-scripts-http-proxy-middleware-js" class="headerlink" title="2.新增文件 themes/landscape/scripts/http_proxy_middleware.js:"></a>2.新增文件 themes/landscape/scripts/http_proxy_middleware.js:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">const &#123; createProxyMiddleware &#125; = require(<span class="string">'http-proxy-middleware'</span>);</span><br><span class="line"></span><br><span class="line">const apiProxy = createProxyMiddleware(<span class="string">'/api'</span>, &#123;</span><br><span class="line">  target: <span class="string">'http://baidu.com'</span>,</span><br><span class="line">  changeOrigin: <span class="literal">true</span>,</span><br><span class="line">  pathRewrite: &#123;</span><br><span class="line">    <span class="string">'^/api/'</span>: <span class="string">'/'</span>, // rewrite path 将链接中的 /api/ 替换为 <span class="string">'/'</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">hexo.extend.filter.register(<span class="string">'server_middleware'</span>, <span class="keyword">function</span>(app)&#123;</span><br><span class="line">  // 表示以 api 开头的请求将被转发</span><br><span class="line">  app.use(<span class="string">'/api'</span>, apiProxy);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h4 id="3-重启项目即可hexo-server，出现以下信息表示配置成功："><a href="#3-重启项目即可hexo-server，出现以下信息表示配置成功：" class="headerlink" title="3.重启项目即可hexo server，出现以下信息表示配置成功："></a>3.重启项目即可hexo server，出现以下信息表示配置成功：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[HPM] Proxy created: /api  -&gt; http://baidu.com</span><br><span class="line">[HPM] Proxy rewrite rule created: <span class="string">"^/api/"</span> ~&gt; <span class="string">"/"</span></span><br></pre></td></tr></table></figure>
       
@@ -462,15 +463,19 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/08/31/mixins-scss/" rel="next" title="mixins.scss">
-                <i class="fa fa-chevron-left"></i> mixins.scss
-              </a>
+              <a href="/2020/12/25/git-cherry-pick/" rel="next" title="git 指定从其他分支拉取(复制)commit,git cherry-pick <commit-id>">
+                <i class="fa fa-chevron-left"></i> git 指定从其他分支拉取(复制)commit,git cherry-pick <commit-id>
+              </commit-id></a>
             
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/02/09/google-screenshot/" rel="prev" title="google开发者工具截图">
+                google开发者工具截图 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -541,7 +546,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">39</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -570,7 +575,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -626,7 +639,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
   <span class="with-love" id="animate">
     <i class="fa fa-xiaoManHua"></i>
   </span>

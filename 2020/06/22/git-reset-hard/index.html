@@ -109,18 +109,18 @@
 
 
 
-  <meta name="description" content="撤下上1次push提交,不留历史记录(记得备份)1231. git log 2. git reset --hard a517075c66cec4f44c336//回退到a517075c66cec4f44c336版本, 这一步之前一定要保存好文件，之后就什么都没有了3. git push origin feature/CITC-99 -f //强制push &amp;lt;&amp;gt; -f,不强推会冲突，推不">
+  <meta name="description" content="取消commit, (未push)1git reset a517075c66 // a517075c66为commit之前的提交ID 撤下上1次push提交,不留历史记录(记得备份)1231. git log 2. git reset --hard a517075c66cec4f44c336//回退到a517075c66cec4f44c336版本, 这一步之前一定要保存好文件，之后就什么都没有了3">
 <meta name="keywords" content="git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git reset --hard">
+<meta property="og:title" content="git reset 撤下commit或push">
 <meta property="og:url" content="https://xmh-web.com/2020/06/22/git-reset-hard/index.html">
 <meta property="og:site_name" content="xmh">
-<meta property="og:description" content="撤下上1次push提交,不留历史记录(记得备份)1231. git log 2. git reset --hard a517075c66cec4f44c336//回退到a517075c66cec4f44c336版本, 这一步之前一定要保存好文件，之后就什么都没有了3. git push origin feature/CITC-99 -f //强制push &amp;lt;&amp;gt; -f,不强推会冲突，推不">
+<meta property="og:description" content="取消commit, (未push)1git reset a517075c66 // a517075c66为commit之前的提交ID 撤下上1次push提交,不留历史记录(记得备份)1231. git log 2. git reset --hard a517075c66cec4f44c336//回退到a517075c66cec4f44c336版本, 这一步之前一定要保存好文件，之后就什么都没有了3">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-06-22T06:31:09.745Z">
+<meta property="og:updated_time" content="2022-02-25T08:01:08.921Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git reset --hard">
-<meta name="twitter:description" content="撤下上1次push提交,不留历史记录(记得备份)1231. git log 2. git reset --hard a517075c66cec4f44c336//回退到a517075c66cec4f44c336版本, 这一步之前一定要保存好文件，之后就什么都没有了3. git push origin feature/CITC-99 -f //强制push &amp;lt;&amp;gt; -f,不强推会冲突，推不">
+<meta name="twitter:title" content="git reset 撤下commit或push">
+<meta name="twitter:description" content="取消commit, (未push)1git reset a517075c66 // a517075c66为commit之前的提交ID 撤下上1次push提交,不留历史记录(记得备份)1231. git log 2. git reset --hard a517075c66cec4f44c336//回退到a517075c66cec4f44c336版本, 这一步之前一定要保存好文件，之后就什么都没有了3">
 
 
 
@@ -137,7 +137,7 @@
   };
 </script>
 
-  <title>git reset --hard | xmh</title>
+  <title>git reset 撤下commit或push | xmh</title>
   
 
 
@@ -351,7 +351,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">git reset --hard
+          <h1 class="post-title" itemprop="name headline">git reset 撤下commit或push
               
             
           </h1>
@@ -393,7 +393,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2021-06-22 14:31:09" itemprop="dateModified" datetime="2021-06-22T14:31:09+08:00">2021-06-22</time>
+                <time title="修改时间：2022-02-25 16:01:08" itemprop="dateModified" datetime="2022-02-25T16:01:08+08:00">2022-02-25</time>
               
             
           </span>
@@ -426,7 +426,8 @@
       
 
       
-        <h2 id="撤下上1次push提交-不留历史记录-记得备份"><a href="#撤下上1次push提交-不留历史记录-记得备份" class="headerlink" title="撤下上1次push提交,不留历史记录(记得备份)"></a>撤下上1次push提交,不留历史记录(<em>记得备份</em>)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. git <span class="built_in">log</span> </span><br><span class="line">2. git reset --hard a517075c66cec4f44c336//回退到a517075c66cec4f44c336版本, 这一步之前一定要保存好文件，之后就什么都没有了</span><br><span class="line">3. git push origin feature/CITC-99 -f //强制push &lt;&gt; -f,不强推会冲突，推不上，必须强推</span><br></pre></td></tr></table></figure>
+        <h2 id="取消commit-未push"><a href="#取消commit-未push" class="headerlink" title="取消commit, (未push)"></a>取消commit, (未push)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset a517075c66 // a517075c66为commit之前的提交ID</span><br></pre></td></tr></table></figure>
+<h2 id="撤下上1次push提交-不留历史记录-记得备份"><a href="#撤下上1次push提交-不留历史记录-记得备份" class="headerlink" title="撤下上1次push提交,不留历史记录(记得备份)"></a>撤下上1次push提交,不留历史记录(<em>记得备份</em>)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. git <span class="built_in">log</span> </span><br><span class="line">2. git reset --hard a517075c66cec4f44c336//回退到a517075c66cec4f44c336版本, 这一步之前一定要保存好文件，之后就什么都没有了</span><br><span class="line">3. git push origin feature/CITC-99 -f //强制push &lt;&gt; -f,不强推会冲突，推不上，必须强推</span><br></pre></td></tr></table></figure>
 <h2 id="git-reset-–hard-ID之后-本地文件清空找回方法-如果之前每次提交之前都有git-stash的话，按以下步骤可以找回"><a href="#git-reset-–hard-ID之后-本地文件清空找回方法-如果之前每次提交之前都有git-stash的话，按以下步骤可以找回" class="headerlink" title="git reset –hard ID之后,本地文件清空找回方法(如果之前每次提交之前都有git stash的话，按以下步骤可以找回)"></a>git reset –hard ID之后,本地文件清空找回方法(如果之前每次提交之前都有git stash的话，按以下步骤可以找回)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. git fsck --lost-found</span><br><span class="line">2. 找到“悬空 commit　ID”，忽略“悬空 blob”，</span><br><span class="line">3. git show 7480ed4bba，从上到下，一个个ID找下去，直到找到文件为止</span><br><span class="line">4. 找到后，git merge 7480ed4bba, 退出</span><br><span class="line">5. git stash，再次备份文件，把文件重命名，使git reset --hard后不被丢失</span><br><span class="line">6. 再次git reset --hard 6bd3af08e008ff　恢复到撤消之前的代码，无影无踪；</span><br><span class="line">7. 手动把备份的文件恢复</span><br></pre></td></tr></table></figure>
       
     </div>
@@ -460,8 +461,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/31/js-form-verification/" rel="next" title="js 前端表单验证">
-                <i class="fa fa-chevron-left"></i> js 前端表单验证
+              <a href="/2020/02/25/js-array-string/" rel="next" title="JS-数组/字符串-互转">
+                <i class="fa fa-chevron-left"></i> JS-数组/字符串-互转
               </a>
             
           </div>
@@ -470,8 +471,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/08/31/mixins-scss/" rel="prev" title="mixins.scss">
-                mixins.scss <i class="fa fa-chevron-right"></i>
+              <a href="/2020/11/25/git-rebase-continue/" rel="prev" title="git rebase --continue 解决冲突后代码合并">
+                git rebase --continue 解决冲突后代码合并 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -543,7 +544,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">39</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -572,7 +573,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -608,7 +617,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#撤下上1次push提交-不留历史记录-记得备份"><span class="nav-number">1.</span> <span class="nav-text">撤下上1次push提交,不留历史记录(记得备份)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-reset-–hard-ID之后-本地文件清空找回方法-如果之前每次提交之前都有git-stash的话，按以下步骤可以找回"><span class="nav-number">2.</span> <span class="nav-text">git reset –hard ID之后,本地文件清空找回方法(如果之前每次提交之前都有git stash的话，按以下步骤可以找回)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#取消commit-未push"><span class="nav-number">1.</span> <span class="nav-text">取消commit, (未push)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#撤下上1次push提交-不留历史记录-记得备份"><span class="nav-number">2.</span> <span class="nav-text">撤下上1次push提交,不留历史记录(记得备份)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-reset-–hard-ID之后-本地文件清空找回方法-如果之前每次提交之前都有git-stash的话，按以下步骤可以找回"><span class="nav-number">3.</span> <span class="nav-text">git reset –hard ID之后,本地文件清空找回方法(如果之前每次提交之前都有git stash的话，按以下步骤可以找回)</span></a></li></ol></div>
             
 
           </div>
@@ -628,7 +637,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
   <span class="with-love" id="animate">
     <i class="fa fa-xiaoManHua"></i>
   </span>

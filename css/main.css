@@ -1849,7 +1849,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #5b9436;
+  background: #9ff5ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3192,6 +3192,75 @@ hr {
   height: 100%;
   border: 3px solid #ccc;
   display: none;
+}
+.mask-image-linear-gradient__words {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(#111 55%, transparent);
+  mask-image: linear-gradient(#111 55%, transparent);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+.mask-image-linear-gradient__words .icon {
+  position: absolute;
+  left: 200px;
+  bottom: 10px;
+  background: #666;
+  color: #fff;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+.linear-gradient-bg5 {
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(rgba(84,74,90,0.8), rgba(84,74,90,0.8)), url("/img/flex.png") no-repeat 50% 50%/cover;
+}
+.linear-gradient-bg5 div {
+  width: 50%;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+}
+.faculty-img {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+.faculty-img a {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #999;
+  -webkit-mask-image: -webkit-radial-gradient(#fff, #000);
+}
+.faculty-img a img {
+  transition: all 0.4s ease-out;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  font-family: 'object-fit: cover;';
+}
+.faculty-img::after {
+  position: absolute;
+  top: 6%;
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 95%;
+  z-index: 0;
+  right: -6%;
+  border-radius: 50%;
+  background-color: #9d6c98;
 }
 @-moz-keyframes fill {
   to {
