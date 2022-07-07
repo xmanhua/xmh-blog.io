@@ -1,0 +1,2764 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css">
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.png?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="web前端笔记">
+<meta property="og:type" content="website">
+<meta property="og:title" content="xmh">
+<meta property="og:url" content="https://xmh-web.com/page/5/index.html">
+<meta property="og:site_name" content="xmh">
+<meta property="og:description" content="web前端笔记">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="xmh">
+<meta name="twitter:description" content="web前端笔记">
+
+
+
+
+
+
+  <link rel="canonical" href="https://xmh-web.com/page/5/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>xmh</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-198539417-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-198539417-1');
+</script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+   
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">xmh</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2016/07/05/js-str/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoManHua">
+      <meta itemprop="description" content="web前端笔记">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xmh">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/07/05/js-str/" itemprop="url">
+                  js 字符串String(替换,获取url中的参数,操作cookie)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2016-07-05 16:57:02" itemprop="dateCreated datePublished" datetime="2016-07-05T16:57:02+08:00">2016-07-05</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-07-05 17:32:00" itemprop="dateModified" datetime="2022-07-05T17:32:00+08:00">2022-07-05</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="全部替换replaceAll"><a href="#全部替换replaceAll" class="headerlink" title="全部替换replaceAll"></a>全部替换replaceAll</h4><pre><code class="bash">var replaceAll = <span class="keyword">function</span>(bigStr, str1, str2) {  //把bigStr中的所有str1替换为str2
+    var reg = new RegExp(str1, <span class="string">'gm'</span>);
+    <span class="built_in">return</span> bigStr.replace(reg, str2);
+}
+</code></pre>
+<h4 id="获取浏览器url中的参数值"><a href="#获取浏览器url中的参数值" class="headerlink" title="获取浏览器url中的参数值"></a>获取浏览器url中的参数值</h4><pre><code class="bash"><span class="keyword">function</span> getURLParam (name) {
+    <span class="built_in">return</span> decodeURIComponent((new RegExp(<span class="string">'[?|&amp;]'</span> + name + <span class="string">'='</span> + <span class="string">'([^&amp;;]+?)(&amp;|#|;|$)'</span>, <span class="string">"ig"</span>).<span class="built_in">exec</span>(location.search) || [, <span class="string">""</span>])[1].replace(/\+/g, <span class="string">'%20'</span>)) || null;
+};
+
+<span class="comment"># url: baidu.com/s?ie=utf-8&amp;f=3&amp;rsv_bp=1&amp;rsv_idx=1&amp;tn=baidu&amp;wd=阻止冒泡和默认事件</span>
+getURLParam(<span class="string">'wd'</span>); <span class="comment">#// 阻止冒泡和默认事件</span>
+</code></pre>
+<h4 id="操作cookie"><a href="#操作cookie" class="headerlink" title="操作cookie"></a>操作cookie</h4><pre><code class="bash"><span class="keyword">function</span> setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = <span class="string">'expires='</span>+d.toUTCString();
+    document.cookie = cname + <span class="string">'='</span> + cvalue + <span class="string">'; '</span> + expires;
+};
+<span class="keyword">function</span> getCookie(cname) {
+    var name = cname + <span class="string">'='</span>;
+    var ca = document.cookie.split(<span class="string">';'</span>);
+    <span class="keyword">for</span>(var i=0; i&lt; ca.length; i++) {
+        var c = ca[i];
+        <span class="keyword">while</span> (c.charAt(0) == <span class="string">' '</span>) c = c.substring(1);
+        <span class="keyword">if</span> (c.indexOf(name) != -1) <span class="built_in">return</span> c.substring(name.length, c.length);
+    }
+    <span class="built_in">return</span> <span class="string">''</span>;
+};
+
+//使用:
+var sValue = $(this).val();
+var cookieVal = setCookie(<span class="string">"contact-us-select-Val"</span>,sValue, 7);//设置cookie
+var cookieVal = getCookie(<span class="string">"contact-us-select-Val"</span>);//获取cookie
+
+
+【jquery】jquery.cookie.js //使用:
+$.cookie(<span class="string">'wcag-cookie-font-size'</span>, id, { expires: 7, path: <span class="string">'/'</span> });//设置cookie
+var CookieFontSize = $.cookie(<span class="string">'wcag-cookie-font-size'</span>);//获取cookie
+</code></pre>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2016/07/05/js-ajax/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoManHua">
+      <meta itemprop="description" content="web前端笔记">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xmh">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/07/05/js-ajax/" itemprop="url">
+                  ajax jsonp 常用方式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2016-07-05 16:44:01" itemprop="dateCreated datePublished" datetime="2016-07-05T16:44:01+08:00">2016-07-05</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-07-05 16:50:38" itemprop="dateModified" datetime="2022-07-05T16:50:38+08:00">2022-07-05</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="jquery-ajax函数"><a href="#jquery-ajax函数" class="headerlink" title="jquery ajax函数"></a>jquery ajax函数</h4><pre><code class="bash">var Ajax = <span class="keyword">function</span>(url, <span class="built_in">type</span> success, error) {
+    $.ajax({
+        url: url,
+        <span class="built_in">type</span>: <span class="built_in">type</span>,
+        dataType: <span class="string">'json'</span>,
+        timeout: 10000,
+        success: <span class="keyword">function</span>(d) {
+            var data = d.data;
+            success &amp;&amp; success(data);
+        },
+        error: <span class="keyword">function</span>(e) {
+            error &amp;&amp; error(e);
+        }
+    });
+};
+// 使用方法：
+Ajax(<span class="string">'/data.json'</span>, <span class="string">'get'</span>, <span class="keyword">function</span>(data) {
+    console.log(data);
+});
+</code></pre>
+<h4 id="jsonp方式"><a href="#jsonp方式" class="headerlink" title="jsonp方式"></a>jsonp方式</h4><pre><code class="bash"><span class="keyword">function</span> jsonp(config) {
+    var options = config || {};   // 需要配置url, success, time, fail四个属性
+    var callbackName = (<span class="string">'jsonp_'</span> + Math.random()).replace(<span class="string">"."</span>, <span class="string">""</span>);
+    var oHead = document.getElementsByTagName(<span class="string">'head'</span>)[0];
+    var oScript = document.createElement(<span class="string">'script'</span>);
+    oHead.appendChild(oScript);
+    window[callbackName] = <span class="keyword">function</span>(json) {  //创建jsonp回调函数
+        oHead.removeChild(oScript);
+        clearTimeout(oScript.timer);
+        window[callbackName] = null;
+        options.success &amp;&amp; options.success(json);   //先删除script标签，实际上执行的是success函数
+    };
+    oScript.src = options.url + <span class="string">'?'</span> + callbackName;    //发送请求
+    <span class="keyword">if</span> (options.time) {  //设置超时处理
+        oScript.timer = setTimeout(<span class="function"><span class="title">function</span></span> () {
+            window[callbackName] = null;
+            oHead.removeChild(oScript);
+            options.fail &amp;&amp; options.fail({ message: <span class="string">"超时"</span> });
+        }, options.time);
+    }
+};
+// 使用方法：
+jsonp({
+    url: <span class="string">'/b.com/b.json'</span>,
+    success: <span class="keyword">function</span>(d){
+        //数据处理
+    },
+    time: 5000,
+    fail: <span class="function"><span class="title">function</span></span>(){
+        //错误处理
+    }
+});
+</code></pre>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2016/07/04/js-arr/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoManHua">
+      <meta itemprop="description" content="web前端笔记">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xmh">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/07/04/js-arr/" itemprop="url">
+                  js Array数组(去重,截取和清空,排序sort函数,对象和字符串的转换...)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2016-07-04 16:57:02" itemprop="dateCreated datePublished" datetime="2016-07-04T16:57:02+08:00">2016-07-04</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-07-05 17:52:25" itemprop="dateModified" datetime="2022-07-05T17:52:25+08:00">2022-07-05</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var unique = <span class="keyword">function</span>(arr) &#123;</span><br><span class="line">    var result = [], json = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span> (var i = 0, len = arr.length; i &lt; len; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span> (!json[arr[i]]) &#123;</span><br><span class="line">            json[arr[i]] = 1;</span><br><span class="line">            result.push(arr[i]);  //返回没被删除的元素</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="判断数组元素是否重复"><a href="#判断数组元素是否重复" class="headerlink" title="判断数组元素是否重复"></a>判断数组元素是否重复</h3><pre><code class="bash">var isRepeat = <span class="keyword">function</span>(arr) {  //arr是否有重复元素
+    var <span class="built_in">hash</span> = {};
+    <span class="keyword">for</span> (var i <span class="keyword">in</span> arr) {
+        <span class="keyword">if</span> (<span class="built_in">hash</span>[arr[i]]) <span class="built_in">return</span> <span class="literal">true</span>;
+        <span class="built_in">hash</span>[arr[i]] = <span class="literal">true</span>;
+    }
+    <span class="built_in">return</span> <span class="literal">false</span>;
+};
+</code></pre>
+<h3 id="知识技巧总结"><a href="#知识技巧总结" class="headerlink" title="知识技巧总结"></a>知识技巧总结</h3><h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><pre><code class="bash">underfined、null、0、<span class="literal">false</span>、NaN、空字符串。他们的逻辑非结果均为<span class="literal">true</span>。
+</code></pre>
+<h4 id="闭包格式"><a href="#闭包格式" class="headerlink" title="闭包格式"></a>闭包格式</h4><p>好处：避免命名冲突（全局变量污染）。</p>
+<pre><code class="bash">(<span class="keyword">function</span>(a, b) {
+    console.log(a+b);  //30
+})(10, 20);
+</code></pre>
+<h4 id="截取和清空数组"><a href="#截取和清空数组" class="headerlink" title="截取和清空数组"></a>截取和清空数组</h4><pre><code class="bash">var arr = [12, 222, 44, 88];
+arr.length = 2;   //截取，arr = [12, 222];
+arr.length = 0;   //清空，arr will be equal to [].
+</code></pre>
+<h4 id="获取数组的最大最小值"><a href="#获取数组的最大最小值" class="headerlink" title="获取数组的最大最小值"></a>获取数组的最大最小值</h4><pre><code class="bash">var numbers = [5, 45822, 120, -215];
+var maxInNumbers = Math.max.apply(Math, numbers);   //45822
+var minInNumbers = Math.min.apply(Math, numbers);   //-215
+</code></pre>
+<h4 id="数组排序sort函数"><a href="#数组排序sort函数" class="headerlink" title="数组排序sort函数"></a>数组排序sort函数</h4><pre><code class="bash">var arr = [1, 5, 6, 3];    //数字数组
+arr.sort(<span class="keyword">function</span>(a, b) {
+    <span class="built_in">return</span> a - b;   //从小到大排
+    <span class="built_in">return</span> b - a;   //从大到小排
+    <span class="built_in">return</span> Math.random() - 0.5;   //数组洗牌
+});
+</code></pre>
+<pre><code class="bash">var arr = [{   //对象数组
+    num: 1,
+    text: <span class="string">'num1'</span>
+}, {
+    num: 5,
+    text: <span class="string">'num2'</span>
+}, {
+    num: 6,
+    text: <span class="string">'num3'</span>
+}, {
+    num: 3,
+    text: <span class="string">'num4'</span>
+}];
+arr.sort(<span class="keyword">function</span>(a, b) {
+    <span class="built_in">return</span> a.num - b.num;   //从小到大排
+    <span class="built_in">return</span> b.num - a.num;   //从大到小排
+});
+</code></pre>
+<h4 id="对象和字符串的转换"><a href="#对象和字符串的转换" class="headerlink" title="对象和字符串的转换"></a>对象和字符串的转换</h4><pre><code class="bash">var obj = {a: <span class="string">'aaa'</span>, b: <span class="string">'bbb'</span>};
+var objStr = JSON.stringify(obj);    // <span class="string">"{"</span>a<span class="string">":"</span>aaa<span class="string">","</span>b<span class="string">":"</span>bbb<span class="string">"}"</span>
+var newObj = JSON.parse(objStr);     // {a: <span class="string">"aaa"</span>, b: <span class="string">"bbb"</span>}
+</code></pre>
+<h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><h4 id="集合取交集"><a href="#集合取交集" class="headerlink" title="集合取交集"></a>集合取交集</h4><pre><code class="bash">Array.intersect = <span class="function"><span class="title">function</span></span> () {
+           var result = new Array();
+           var obj = {};
+           <span class="keyword">for</span> (var i = 0; i &lt; arguments.length; i++) {
+               <span class="keyword">for</span> (var j = 0; j &lt; arguments[i].length; j++) {
+                   var str = arguments[i][j];
+                   <span class="keyword">if</span> (!obj[str]) {
+                       obj[str] = 1;
+                   }
+                   <span class="keyword">else</span> {
+                       obj[str]++;
+                       <span class="keyword">if</span> (obj[str] == arguments.length)
+                       {
+                           result.push(str);
+                       }
+                   }//end <span class="keyword">else</span>
+               }//end <span class="keyword">for</span> j
+           }//end <span class="keyword">for</span> i
+           <span class="built_in">return</span> result;
+       }
+
+</code></pre>
+<h4 id="集合去掉重复"><a href="#集合去掉重复" class="headerlink" title="集合去掉重复"></a>集合去掉重复</h4><pre><code class="bash"> Array.prototype.uniquelize = <span class="function"><span class="title">function</span></span> () {
+    var tmp = {},
+        ret = [];
+    <span class="keyword">for</span> (var i = 0, j = this.length; i &lt; j; i++) {
+        <span class="keyword">if</span> (!tmp[this[i]]) {
+            tmp[this[i]] = 1;
+            ret.push(this[i]);
+        }
+    }
+
+    <span class="built_in">return</span> ret;
+}
+</code></pre>
+<h4 id="并集"><a href="#并集" class="headerlink" title="并集"></a>并集</h4><pre><code class="bash">Array.union = <span class="function"><span class="title">function</span></span> () {
+    var arr = new Array();
+    var obj = {};
+    <span class="keyword">for</span> (var i = 0; i &lt; arguments.length; i++) {
+        <span class="keyword">for</span> (var j = 0; j &lt; arguments[i].length; j++)
+        {
+            var str=arguments[i][j];
+            <span class="keyword">if</span> (!obj[str])
+            {
+                obj[str] = 1;
+                arr.push(str);
+            }
+        }//end <span class="keyword">for</span> j
+    }//end <span class="keyword">for</span> i
+    <span class="built_in">return</span> arr;
+}
+</code></pre>
+<h4 id="2个集合的差集-在arr不存在"><a href="#2个集合的差集-在arr不存在" class="headerlink" title="2个集合的差集 在arr不存在"></a>2个集合的差集 在arr不存在</h4><pre><code class="bash">Array.prototype.minus = <span class="keyword">function</span> (arr) {
+    var result = new Array();
+    var obj = {};
+    <span class="keyword">for</span> (var i = 0; i &lt; arr.length; i++) {
+        obj[arr[i]] = 1;
+    }
+    <span class="keyword">for</span> (var j = 0; j &lt; this.length; j++) {
+        <span class="keyword">if</span> (!obj[this[j]])
+        {
+            obj[this[j]] = 1;
+            result.push(this[j]);
+        }
+    }
+    <span class="built_in">return</span> result;
+};
+</code></pre>
+<pre><code class="bash">console.log(Array.intersect([<span class="string">"1"</span>, <span class="string">"2"</span>, <span class="string">"3"</span>], [<span class="string">"2"</span>, <span class="string">"3"</span>, <span class="string">"4"</span>, <span class="string">"5"</span>, <span class="string">"6"</span>]));//[2,3]
+console.log([1, 2, 3, 2, 3, 4, 5, 6].uniquelize());//[1,2,3,4,5,6]
+console.log(Array.union([<span class="string">"1"</span>, <span class="string">"2"</span>, <span class="string">"3"</span>], [<span class="string">"2"</span>, <span class="string">"3"</span>, <span class="string">"4"</span>, <span class="string">"5"</span>, <span class="string">"6"</span>], [<span class="string">"5"</span>, <span class="string">"6"</span>, <span class="string">"7"</span>, <span class="string">"8"</span>, <span class="string">"9"</span>]))
+console.log([<span class="string">"2"</span>, <span class="string">"3"</span>, <span class="string">"4"</span>, <span class="string">"5"</span>, <span class="string">"6"</span>].minus([<span class="string">"1"</span>, <span class="string">"2"</span>, <span class="string">"3"</span>]));
+</code></pre>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2016/06/05/js-number/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoManHua">
+      <meta itemprop="description" content="web前端笔记">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xmh">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/06/05/js-number/" itemprop="url">
+                  js Number (生成随机数, π值, 绝对值,toFixed)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2016-06-05 17:19:56" itemprop="dateCreated datePublished" datetime="2016-06-05T17:19:56+08:00">2016-06-05</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-07-05 17:32:16" itemprop="dateModified" datetime="2022-07-05T17:32:16+08:00">2022-07-05</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="生成随机数"><a href="#生成随机数" class="headerlink" title="生成随机数"></a>生成随机数</h4><pre><code class="bash"><span class="keyword">function</span> randombetween(min, max){
+    <span class="built_in">return</span> min + (Math.random() * (max-min +1));
+}
+</code></pre>
+<h4 id="浮点数计算问题"><a href="#浮点数计算问题" class="headerlink" title="浮点数计算问题"></a>浮点数计算问题</h4><p>为什么呢？因为0.1+0.2等于0.30000000000000004。JavaScript的数字都遵循IEEE 754标准构建，在内部都是64位浮点小数表示。可以通过使用toFixed()来解决这个问题。</p>
+<pre><code class="bash">0.1 + 0.2 == 0.3 <span class="comment">#//false</span>
+</code></pre>
+<h4 id="Math-常用属性-PI-π值一部分"><a href="#Math-常用属性-PI-π值一部分" class="headerlink" title="Math 常用属性: PI π值一部分"></a>Math 常用属性: PI π值一部分</h4><pre><code class="bash">Math.PI
+//3.141592653589793
+</code></pre>
+<h4 id="abs-number-获取参数的绝对值"><a href="#abs-number-获取参数的绝对值" class="headerlink" title="abs(number) 获取参数的绝对值"></a>abs(number) 获取参数的绝对值</h4><p>常用方法:<br>注:接收参数为number类型,如使用非number类型则方法会尝试使用Number(number)方法去转换为Number类型,而不是使用 parseFloat(number)</p>
+<pre><code class="bash">Math.abs(10)//10
+Math.abs(-10)//10
+Math.abs(<span class="string">"10"</span>)//10
+Math.abs(<span class="string">"10abc"</span>)//NaN
+window.parseFloat(<span class="string">"10abc"</span>)//10
+Number(<span class="string">"10abc"</span>)//NaN
+</code></pre>
+<h4 id="ceil-number-向下取整"><a href="#ceil-number-向下取整" class="headerlink" title="ceil(number)向下取整"></a>ceil(number)向下取整</h4><pre><code class="bash">Math.ceil(10.0001)//11
+Math.ceil(<span class="string">"10.99abc"</span>)//NaN
+</code></pre>
+<h4 id="floor-number-向下取整"><a href="#floor-number-向下取整" class="headerlink" title="floor(number) 向下取整"></a>floor(number) 向下取整</h4><pre><code class="bash">Math.floor(10.2) //10
+Math.floor(10.99)//10
+Math.floor(<span class="string">"10.99"</span>)//10 字符串参数
+Math.floor(<span class="string">"10.99abc"</span>)//NaN
+</code></pre>
+<h4 id="max-numberX-numberY-…-获取输入参数中最大的一个"><a href="#max-numberX-numberY-…-获取输入参数中最大的一个" class="headerlink" title="max(numberX,numberY,…) 获取输入参数中最大的一个"></a>max(numberX,numberY,…) 获取输入参数中最大的一个</h4><pre><code class="bash">Math.max(10,200,400)//400
+Math.max(<span class="string">"1077"</span>,200,400)//1077 注意返回值是Number类型,而不是String类型
+Math.max([1,2,3],[4,5,6]) //NaN
+</code></pre>
+<h4 id="min-numberX-numberY-…-获取输入参数中最小的一个"><a href="#min-numberX-numberY-…-获取输入参数中最小的一个" class="headerlink" title="min(numberX,numberY,…)获取输入参数中最小的一个"></a>min(numberX,numberY,…)获取输入参数中最小的一个</h4><pre><code class="bash">Math.min(10,200,400)//10
+Math.min(1077,<span class="string">"200"</span>,400)//200 注意返回值是Number类型,而不是String类型
+Math.min([1,2,3],[4,5,6]) //NaN
+</code></pre>
+<h4 id="pow-numberX-numberY-获取参数x的y次方-参数二没有默认值"><a href="#pow-numberX-numberY-获取参数x的y次方-参数二没有默认值" class="headerlink" title="pow (numberX,numberY) 获取参数x的y次方,参数二没有默认值"></a>pow (numberX,numberY) 获取参数x的y次方,参数二没有默认值</h4><pre><code class="bash">Math.pow(8,2)//64
+Math.pow(<span class="string">"8"</span>,2)//64
+Math.pow(<span class="string">"8"</span>,<span class="string">"2"</span>)//64
+Math.pow(<span class="string">"8"</span>)//NaN 参数二没有默认值
+</code></pre>
+<h4 id="random-返回0-1的随机数"><a href="#random-返回0-1的随机数" class="headerlink" title="random() 返回0-1的随机数"></a>random() 返回0-1的随机数</h4><pre><code class="bash">Math.random()//0.636911032255739
+</code></pre>
+<h4 id="round-number-四舍五入保留整数-保留几位小数是Number的方法-toFixed"><a href="#round-number-四舍五入保留整数-保留几位小数是Number的方法-toFixed" class="headerlink" title="round(number) 四舍五入保留整数,保留几位小数是Number的方法.toFixed"></a>round(number) 四舍五入保留整数,保留几位小数是Number的方法.toFixed</h4><pre><code class="bash">Math.round(10.499)//10
+Math.round(10.500)//11
+123.43323.toFixed() //<span class="string">"123"</span>,当参数为空时默认保留到整数,注意返回的是String而不是Number
+123.43323.toFixed(2)//<span class="string">"123.43"</span>
+123.toFixed(2)
+//Uncaught SyntaxError: Unexpected token ILLEGAL 这里报错了是因为系统把123后面的点当成了是小数点而非调用方法点
+(123).toFixed(2)
+//<span class="string">"123.00"</span> ,当小数点后不足两位时,该方法会自动不足,这也是为什么返回值为字符串而非数值的原因
+
+</code></pre>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2016/05/21/CSS3-finishing/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoManHua">
+      <meta itemprop="description" content="web前端笔记">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xmh">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/05/21/CSS3-finishing/" itemprop="url">
+                  常用CSS3整理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2016-05-21 10:20:40" itemprop="dateCreated datePublished" datetime="2016-05-21T10:20:40+08:00">2016-05-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-05-16 13:20:00" itemprop="dateModified" datetime="2018-05-16T13:20:00+08:00">2018-05-16</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="显示几行-超出显示…（x-n要改为实际数字，ie-ff不支持省略号）"><a href="#显示几行-超出显示…（x-n要改为实际数字，ie-ff不支持省略号）" class="headerlink" title="显示几行,超出显示…（x,n要改为实际数字，ie,ff不支持省略号）"></a>显示几行,超出显示…（x,n要改为实际数字，ie,ff不支持省略号）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">display: block;</span><br><span class="line">display: -webkit-box;</span><br><span class="line">overflow: hidden;</span><br><span class="line">-webkit-line-clamp: 2;</span><br><span class="line">-webkit-box-orient: vertical;</span><br><span class="line">text-overflow: ellipsis;</span><br><span class="line">line-height: X;</span><br><span class="line">max-height: X*N;</span><br></pre></td></tr></table></figure>
+<h2 id="图片遮罩"><a href="#图片遮罩" class="headerlink" title="图片遮罩"></a>图片遮罩</h2><h4 id="1-方形的图变成圆形显示"><a href="#1-方形的图变成圆形显示" class="headerlink" title="1. 方形的图变成圆形显示"></a>1. 方形的图变成圆形显示</h4><p><img src="/img/round.png" style="border: none;" alt="方形的图变成圆形" border="0" height="100" width="100"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">img &#123;</span><br><span class="line">  clip-path: circle(100px at center);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/05/21/CSS3-finishing/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2016/03/06/HTML5-Mobile/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoManHua">
+      <meta itemprop="description" content="web前端笔记">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xmh">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/03/06/HTML5-Mobile/" itemprop="url">
+                  移动端开发 干货知识
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2016-03-06 17:20:16" itemprop="dateCreated datePublished" datetime="2016-03-06T17:20:16+08:00">2016-03-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-07-06 17:46:09" itemprop="dateModified" datetime="2022-07-06T17:46:09+08:00">2022-07-06</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="ipad-ios-css-active不兼容"><a href="#ipad-ios-css-active不兼容" class="headerlink" title="ipad ios css active不兼容"></a>ipad ios css active不兼容</h3><p>只需给body绑定一个匿名空函数touchstart事件就可以正常使用active事件了，美团H5就这么做的<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#方法一:</span></span><br><span class="line">var a = document.getElementsByTagName(<span class="string">'a'</span>);</span><br><span class="line"><span class="keyword">for</span>(var i = 0; i &lt; a.length; i++)</span><br><span class="line">&#123;</span><br><span class="line">  a[i].addEventListener(<span class="string">'touchstart'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">  &#125;,<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#方法二:</span></span><br><span class="line">&lt;body ontouchstart=<span class="string">""</span> onmouseover=<span class="string">""</span>&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">### border-image</span></span><br><span class="line">在手机端如果1px线条仍然显示过粗，可以使用css新属性border-image边框图像来解决</span><br><span class="line">``` bash</span><br><span class="line">     例：border-image: url(../img/line-img1.png) 2 0 round;</span><br><span class="line">``` </span><br><span class="line">[border-image](http://www.w3cplus.com/content/css3-border-image)</span><br><span class="line">在部分安卓机上使用border-image后，发现内容区域设置 :active 后不起作用。</span><br><span class="line">原因：border-image 后面默认加了fill关键字</span><br><span class="line">解决办法：使用的边框图片，图片中间区域背景一定要是透明的。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">### input事件</span></span><br><span class="line">1. 部分安卓机对键盘事件不兼容，如果是对输入框内容监听变化可用input事件;</span><br><span class="line"></span><br><span class="line">2. input输入框输入内容后，点击自定义清空内容的按钮，键盘收起的问题2. </span><br><span class="line">解决办法：按钮用input标签，改变样式为按钮样子，点击删除后，设置原输入框focus();</span><br><span class="line"></span><br><span class="line"><span class="comment">### 防止按钮点击时 背景闪烁</span></span><br><span class="line">``` bash</span><br><span class="line">      html&#123;</span><br><span class="line">          -webkit-tap-highlight-color: transparent;</span><br><span class="line">      &#125;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">### 兼容iOS伪类 :active   需要给 document 绑定 touchstart 或 touchend 事件</span></span><br><span class="line">``` bash</span><br><span class="line">document.addEventListener(<span class="string">'touchstart'</span>,<span class="function"><span class="title">function</span></span>()&#123;&#125;,<span class="literal">false</span>);</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">### 禁止用户选中文字</span></span><br><span class="line">``` bash</span><br><span class="line">  -webkit-user-select: none</span><br><span class="line">``` </span><br><span class="line"><span class="comment">### 设置input的placeholder内容样式的方法</span></span><br><span class="line">``` bash</span><br><span class="line">    input::-webkit-input-placeholder&#123;</span><br><span class="line">        color:<span class="comment">#999;</span></span><br><span class="line">        font-size: 14px;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案,"></a>解决方案,</h3><p><a href="https://github.com/AlloyTeam/Mars" target="_blank" rel="noopener">腾讯移动端解决方案</a><br><a href="http://screensiz.es/phone​" target="_blank" rel="noopener">移动设备尺寸大全</a></p>
+<h3 id="各种参考手册"><a href="#各种参考手册" class="headerlink" title="各种参考手册"></a>各种参考手册</h3><p><a href="http://css.doyoe.com/" target="_blank" rel="noopener">css</a><br><a href="https://msdn.microsoft.com/zh-CN/library/yek4tbz0.aspx" target="_blank" rel="noopener">javascript</a><br><a href="http://tool.oschina.net/apidocs/apidoc?api=jquery" target="_blank" rel="noopener">jquery</a><br><a href="http://www.css88.com/doc/zeptojs_api/" target="_blank" rel="noopener">zepto</a> </p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2016/02/25/js-array-string/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoManHua">
+      <meta itemprop="description" content="web前端笔记">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xmh">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/02/25/js-array-string/" itemprop="url">
+                  JS-数组/字符串-互转
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2016-02-25 15:04:36" itemprop="dateCreated datePublished" datetime="2016-02-25T15:04:36+08:00">2016-02-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-07-05 17:33:56" itemprop="dateModified" datetime="2022-07-05T17:33:56+08:00">2022-07-05</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="数组转字符串，去引号，逗号后加空格。"><a href="#数组转字符串，去引号，逗号后加空格。" class="headerlink" title="数组转字符串，去引号，逗号后加空格。"></a>数组转字符串，去引号，逗号后加空格。</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var rId = [a,b,c] </span><br><span class="line">var reg = new RegExp(<span class="string">'"'</span>, <span class="string">"g"</span>);</span><br><span class="line">rId.toString().replace(reg, <span class="string">""</span>);</span><br><span class="line"></span><br><span class="line">// add space</span><br><span class="line">rId.replace(/,/g, <span class="string">', '</span>);</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/02/25/js-array-string/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2015/11/27/CSS3-nth-child-n/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoManHua">
+      <meta itemprop="description" content="web前端笔记">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xmh">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/11/27/CSS3-nth-child-n/" itemprop="url">
+                  CSS3选择器nth-child(n)实现隔几行选择元素
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2015-11-27 16:40:24 / 修改时间：15:00:00" itemprop="dateCreated datePublished" datetime="2015-11-27T16:40:24+08:00">2015-11-27</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p></p><p>nth-child(n)，n 可以是数字、关键词或公式。选择器匹配属于其父元素的第N个子元素，不论元素的类型。</p><p></p>
+<h2 id="一行显示4个，第4个的倍数-1另起一行"><a href="#一行显示4个，第4个的倍数-1另起一行" class="headerlink" title="一行显示4个，第4个的倍数+1另起一行:"></a>一行显示4个，第4个的倍数+1另起一行:</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">li:nth-child(4n+1)&#123;</span><br><span class="line">  clear: both ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="序号写法"><a href="#序号写法" class="headerlink" title="序号写法"></a>序号写法</h2><h5 id="把第3个LI的背景设为橙色"><a href="#把第3个LI的背景设为橙色" class="headerlink" title="把第3个LI的背景设为橙色:"></a>把第3个LI的背景设为橙色:</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">li:nth-child(3)&#123;</span><br><span class="line">  background:orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/11/27/CSS3-nth-child-n/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2015/11/03/js-get-cookie/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoManHua">
+      <meta itemprop="description" content="web前端笔记">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xmh">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/11/03/js-get-cookie/" itemprop="url">
+                  JS设置获取cookie
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2015-11-03 20:28:30" itemprop="dateCreated datePublished" datetime="2015-11-03T20:28:30+08:00">2015-11-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2015-07-16 16:05:00" itemprop="dateModified" datetime="2015-07-16T16:05:00+08:00">2015-07-16</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="js获取url指定参数值"><a href="#js获取url指定参数值" class="headerlink" title="js获取url指定参数值"></a>js获取url指定参数值</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> getCookie(cname) &#123;</span><br><span class="line">  var name = cname + <span class="string">"="</span>;</span><br><span class="line">  var ca = document.cookie.split(<span class="string">';'</span>);</span><br><span class="line">  <span class="keyword">for</span>(var i = 0; i &lt; ca.length; i++) &#123;</span><br><span class="line">      var c = ca[i];</span><br><span class="line">      <span class="keyword">while</span> (c.charAt(0) == <span class="string">' '</span>) &#123;</span><br><span class="line">      c = c.substring(1);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (c.indexOf(name) == 0) &#123;</span><br><span class="line">          <span class="built_in">return</span> c.substring(name.length, c.length);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> <span class="string">""</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/11/03/js-get-cookie/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xmh-web.com/2015/10/19/git/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoManHua">
+      <meta itemprop="description" content="web前端笔记">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xmh">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2015/10/19/git/" itemprop="url">
+                  git 常用命令
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2015-10-19 19:28:50" itemprop="dateCreated datePublished" datetime="2015-10-19T19:28:50+08:00">2015-10-19</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2017-03-01 12:00:00" itemprop="dateModified" datetime="2017-03-01T12:00:00+08:00">2017-03-01</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> &lt;url&gt;               // 克隆远程版本库</span><br><span class="line">git init                               //初始化本地版本库</span><br></pre></td></tr></table></figure>
+<h2 id="修改和提交"><a href="#修改和提交" class="headerlink" title="修改和提交"></a>修改和提交</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">git status                                                         //查看状态</span><br><span class="line">git diff                                                               //查看变更内容</span><br><span class="line">git add .                                                           //跟踪所有改动过的文件</span><br><span class="line">git add &lt;file&gt;                                                 //跟踪指定的文件</span><br><span class="line">git add --all                                                    //提交全部</span><br><span class="line">git mv &lt;old&gt; &lt;new&gt;                                    //文件改名</span><br><span class="line">git rm &lt;file&gt;                                                   //删除文件</span><br><span class="line">git rm --cached &lt;file&gt;                                //停止跟踪文件但不删除</span><br><span class="line">git commit -m <span class="string">"commit message"</span>      //提交文件</span><br><span class="line">git commit --amend                                 //修改最后一次提交</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2015/10/19/git/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="xiaoManHua">
+
+              <p class="site-author-name" itemprop="name">xiaoManHua</p>
+              <p class="site-description motion-element" itemprop="description">web前端笔记</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">54</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-xiaoManHua"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xiaoManHua</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.4.1</div>
+
+
+
+
+<div>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style="display:none">
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style="display:none">
+    有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+</span>
+</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/xmh.js?v=6.4.1"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- 没有用到:
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8MWH6T56M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S8MWH6T56M');
+</script>
+-->
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
